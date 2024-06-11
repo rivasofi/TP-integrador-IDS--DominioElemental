@@ -2,19 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
 
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Poppins',sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 header {
     position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    padding: 20px 100px;    
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
     display: flex;
     align-items: center;
     z-index: 100;
@@ -23,58 +23,118 @@ header {
 
 
 
-h1{
-    
+h1 {
+
     font-size: 1.1;
     color: #3D9493;
     position: left;
 
 }
-h1:hover{
+
+h1:hover {
     transform: scale(1.1);
     color: #E88B40;
 
 }
 
-.navegacion a{
+header {
+    background-color: #00000057;
+    padding: 10px 20px;
+}
+
+.navegacion a {
     position: relative;
     font-size: 18px;
     text-decoration: none;
     color: white;
     font-weight: 500;
     margin-left: 40px;
-    transition:0.5s;
+    margin-right: 10px;
+    transition: 0.5s;
 }
 
-.navegacion a:hover{
+.navegacion a:hover {
     text-decoration: underline;
     color: #3D9493;
 
 }
 
-.navegacion .boton_login{
+.navegacion .boton_login {
     color: white;
     position: relative;
-    font-size:1.1em;
+    font-size: 1.1em;
     font-weight: 500;
     margin-left: 40px;
     width: 130px;
     height: 50px;
     background: transparent;
     border: 1px solid white;
-    outline:none;
+    outline: none;
     border-radius: 10px;
-    transition:0.3s;
+    transition: 0.3s;
 
 }
 
-.navegacion .boton_login:hover{
-    color:aliceblue;
+.navegacion .boton_login:hover {
+    color: aliceblue;
     background-color: #E88B40;
 }
 
+.custom-checkbox {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+}
 
-body{
+.custom-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.custom-checkbox span {
+    position: relative;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.custom-checkbox input[type="checkbox"]:checked+span {
+    background-color: #E88B40;
+    border-color: #E88B40;
+}
+
+.custom-checkbox span:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input[type="checkbox"]:checked+span:after {
+    display: block;
+}
+
+.custom-checkbox span:after {
+    left: 2.5px;
+    top: 1px;
+    width: 3px;
+    height: 6px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,81 +145,98 @@ body{
 
 }
 
-
- .login_form h2{
+.login_form h2 {
     color: white;
     padding: 0 0 20px 0;
     text-align: center;
-    font-size:220%;
-    
- }
-.login_form{
-    padding:10px;
+    font-size: 220%;
+
+}
+
+.login_form {
+    padding: 10px;
     width: 450px;
     height: 100%;
     z-index: 100;
     background: transparent;
     border-radius: 18px;
     border: none;
-    font-size:16px;
-    color:white;
+    font-size: 16px;
+    color: white;
     font-weight: 500;
     align-items: center;
     backdrop-filter: blur(10px);
 }
 
-.login_form input{
-    padding-right:115px;
+.login_form input {
+    padding-right: 115px;
     color: white;
     position: relative;
-    margin:20px  0;
+    margin: 20px 0;
     border: none;
-    background: none ;
-    outline:none;
-    font-size: 15px;;
+    background: none;
+    outline: none;
+    font-size: 15px;
+    ;
     border-bottom: 1px solid white;
 }
 
-.login_form a{
+.login_form a {
     position: relative;
     font-size: 16px;
     text-decoration: none;
     color: #DF7A39;
     font-weight: 500;
     margin-left: 20px;
-    transition:0.5s;
-    cursor:pointer;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
-.login_form a:hover{
+.login_form a:hover {
     color: white;
     text-decoration: underline;
 
 }
 
-.login_form [type="submit"]{
+.login_form [type="submit"] {
     font-size: 16px;
     color: white;
     width: 100%;
     height: 50px;
     background: transparent;
     border: 1px solid white;
-    outline:none;
+    outline: none;
     border-radius: 10px;
-    transition:0.3s;
-    font-weight:700;
+    transition: 0.3s;
+    font-weight: 700;
     border-radius: 25px;
 
 }
 
-.login_form [type="submit"]:hover{
-    color:aliceblue;
+.login_form [type="submit"]:hover {
+    color: aliceblue;
     background-color: #3D9493;
 }
-.login_form p{
+
+.login_form p {
     padding-top: 3px;
     margin: 30px 0;
     text-align: center;
     font-size: 16px;
-    color:white;
+    color: white;
+}
+
+.custom-checkbox {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
