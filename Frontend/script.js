@@ -7,6 +7,14 @@ document.getElementById('form-open').addEventListener('click', function () {
     loginForm.classList.toggle('show');
 });
 
+document.getElementById('cerrar_login').addEventListener('click', function() {
+    var loginForm = document.querySelector('.login_form');
+    if (loginForm.classList.contains('show')) {
+        loginForm.classList.toggle('show');
+    }
+});
+
+
 function reproducir_audio() {
     var audio = document.getElementById("background-audio");
     audio.play();
