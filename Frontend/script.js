@@ -1,8 +1,11 @@
+document.body.addEventListener('click', function () {
+    reproducir_audio();
+});
+
 document.getElementById('form-open').addEventListener('click', function () {
     var loginForm = document.querySelector('.login_form');
     loginForm.classList.toggle('show');
 });
-
 
 function reproducir_audio() {
     var audio = document.getElementById("background-audio");
@@ -21,5 +24,4 @@ function mutear_audio() {
         icono.classList.remove('bx-volume-mute');
         icono.classList.add('bx-volume-full');
     }
-
 }
