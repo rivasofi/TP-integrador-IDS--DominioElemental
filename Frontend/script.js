@@ -14,6 +14,14 @@ document.getElementById('cerrar_login').addEventListener('click', function() {
     }
 });
 
+document.getElementById('toggle_contrasena').addEventListener('click', function() {
+    var passwordField = document.getElementById('passwordField');
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+    } else {
+        passwordField.type = "password";
+    }
+});
 
 function reproducir_audio() {
     var audio = document.getElementById("background-audio");
