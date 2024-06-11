@@ -6,3 +6,12 @@ document.getElementById('form-open').addEventListener('click', function () {
         loginForm.style.display = 'none';
     }
 });
+
+document.addEventListener("click", function() {
+    reproducir_audio();
+});
+
+function reproducir_audio() {
+    var audio = document.getElementById("background-audio");
+    audio.play();
+}
