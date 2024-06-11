@@ -1,11 +1,63 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-widht, initial-scale=1.0">
-        <title>web-intro</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<audio id="background-audio" src="login-musica.mp3" autoplay loop></audio>
+
+<body>
+    <header>
+        <h1 class="nombre_juego">Lorem ipsum</h1>
+        <nav class="navegacion">
+            <button class="boton_login" id="form-open">Login</button>
+            <a href="#">Contact</a>
+            <a href="#">Merch</a>
+            <a href="#">About us</a>
+        </nav>
+    </header>
+    <div>
+        <div class="login_form" style="display: none;">
+            <i class='bx bx-x' id="cerrar_login"></i>
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input">
+                    <input type="email ID" required placeholder="Email">
+                    <i class='bx bx-envelope'></i>
+                </div>
+                <div class="input">
+                    <input type="password" required placeholder="Contraseña">
+                    <i class='bx bx-lock-alt'></i>
+                </div>
+                <div class="remember_forgot">
+                    <label class="custom-checkbox">
+                        <input type="checkbox">
+                        <span></span>
+                        Recuerdame
+                    </label>
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </div>
+                <button type="submit" class="boton_inicio_sesion">Login</button>
+                <div class="sin_cuenta">
+                    <p>¿No tienes una cuenta? <a href="#">Registrate</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <button class="boton_volumen" onclick="mutear_audio()"><i class='bx bx-volume-full icon-volume'></i></button>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
 
 </html>
