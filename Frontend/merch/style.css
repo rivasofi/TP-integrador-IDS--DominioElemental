@@ -130,9 +130,7 @@ header {
     transform: scale(1.02);
 }
 
-.productos .box_container .box .imagen:hover img {
-    content: url('./imagenes_merch/buzo_B.jpeg');
-}
+
 
 .productos .box_container .box .descripcion .precio span{
     font-size:15px;
@@ -152,3 +150,51 @@ header {
     color: whitesmoke;
     
 }
+
+.productos .box_container .box .imagen .funko_sofi:hover{
+    content: url('./imagenes_merch/funko_sofi_atras.png');
+}
+.productos .box_container .box .imagen .funko_sofi{
+    height: 14rem;
+    border-radius: 20px;
+}
+
+.productos .box_container .box .imagen .funko_nati:hover{
+    content: url('./imagenes_merch/funko_nati_atras.png');
+}
+.productos .box_container .box .imagen .funko_nati{
+    height: 14rem;
+    border-radius: 20px;
+}
+
+.productos .box_container .box .imagen .funko_conra:hover{
+    content: url('./imagenes_merch/funko_conra_atras.png');
+}
+.productos .box_container .box .imagen .funko_conra{
+    height: 14rem;
+    border-radius: 20px;
+}
+
+.productos .box_container .box .imagen .vaso_kiss:hover{
+    content: url('./imagenes_merch/vaso_kiss_atras.png');
+}
+.productos .box_container .box .imagen .vaso_kiss{
+    height: 14rem;
+    border-radius: 20px;
+}
+
+.productos .box_container .box .imagen .kiss_dog:hover{
+    content: url('./imagenes_merch/bandana_B.png');
+}
+.productos .box_container .box .imagen .kiss_dog{
+    height: 14rem;
+    border-radius: 20px;
+}
+
+p{
+    color:white;
+    padding-bottom: 10px;
+    font-size: 15px;
+    font-weight: 200;
+}
+
