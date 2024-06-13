@@ -56,38 +56,10 @@ header {
     transition: 0.5s;
 }
 
-.icon-volume {
-    color: white;
-    font-size: 30px;
-    cursor: pointer;
-}
-
 .navegacion a:hover {
     text-decoration: underline;
     color: #3D9493;
 
-}
-
-.navegacion .boton_login {
-    color: white;
-    position: relative;
-    font-size: 1.1em;
-    font-weight: 500;
-    margin-left: 40px;
-    width: 130px;
-    height: 50px;
-    background: transparent;
-    border: 1px solid white;
-    outline: none;
-    border-radius: 10px;
-    transition: 0.3s;
-
-}
-
-.navegacion .boton_login:hover {
-    color: aliceblue;
-    background-color: #E88B40;
-    box-shadow: 0 5px 20px rgba(182, 166, 92, 0.4);
 }
 
 body {
@@ -99,10 +71,7 @@ body {
     background-position: center;
     background-size: cover;
     backdrop-filter: blur(10px);
-
-
 }
-
 
 #contact {
     width: 500px;
