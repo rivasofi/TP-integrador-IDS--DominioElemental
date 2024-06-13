@@ -78,6 +78,7 @@ body {
     margin: 2em auto;
     background: white;
     position: relative;
+    max-height: 600px;
 }
 
 #contact::after {
