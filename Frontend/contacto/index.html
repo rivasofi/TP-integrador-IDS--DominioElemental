@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <link rel="stylesheet" href="style_contacto.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <h1 class="nombre_juego">Lorem ipsum</h1>
+        <nav class="navegacion">
+            <a href="../Frontend/merch/index.html">Merch </a>
+            <a href="../Frontend/about_us/index.html">About us</a>
+            <a href="../index.html">Home</a>
+        </nav>
+    </header>
+    <section id="contact">
+        <div class="sectionheader">	<h1>CONTACT US</h1></div>
+        <article>
+        <p>If you have any questions, please fill out the form below and we will get back to you as soon as possible</p>
+            
+                <label for="checkcontact" class="contactbutton"><div class="mail"></div></label><input id="checkcontact" type="checkbox">
+        
+                <form action="" method="post" class="contactform">
+                    <p class="input_wrapper"><input type="text" name="contact_nom" value=""  id ="contact_nom"><label for="contact_nom">NAME</label></p>
+                    <p class="input_wrapper"><input type="text" name="contact_email" value=""  id ="contact_email"><label for="contact_email">EMAIL</label></p>
+                    <p class="input_wrapper"><input type="text" name="contact_sujet" value=""  id ="contact_sujet"><label for="contact_sujet">SUBJECT</label></p>
+                    <p class="textarea_wrapper"><textarea name="contact_message" id="contact_message"></textarea></p>
+                    <p class="submit_wrapper"><input type="submit" value="SEND"></p>			
+                </form>
+        </article>
+    </section>
