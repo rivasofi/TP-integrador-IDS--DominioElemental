@@ -1,20 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('terminos_cond_boton').addEventListener('click', function (evento) {
+    var boton_terminos_condiciones = document.getElementById('terminos_cond_boton');
+    var div_terminos_condiciones = document.getElementById('terminos');
+    var formulario_registro = document.querySelector('form');
+    var checkbox_aceptar_terminos = document.querySelector('input[type="checkbox"]');
+
+    boton_terminos_condiciones.addEventListener('click', function (evento) {
         evento.preventDefault();
-        var terminosDiv = document.getElementById('terminos');
-        if (terminosDiv.style.display === 'none') {
-            terminosDiv.style.display = 'block';
+        if (div_terminos_condiciones.style.display === 'none' || div_terminos_condiciones.style.display === '') {
+            div_terminos_condiciones.style.display = 'block';
         } else {
-            terminosDiv.style.display = 'none';
+            div_terminos_condiciones.style.display = 'none';
         }
     });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('form').addEventListener('submit', function(event) {
-        var termsCheckbox = document.querySelector('input[type="checkbox"]');
-        if (!termsCheckbox.checked) {
-            event.preventDefault();
+    formulario_registro.addEventListener('submit', function(evento) {
+        if (!checkbox_aceptar_terminos.checked) {
+            alert('Debes aceptar los terminos y condiciones');
+            evento.preventDefault();
         }
     });
 });
