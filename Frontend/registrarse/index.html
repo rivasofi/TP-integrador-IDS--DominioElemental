@@ -11,14 +11,14 @@
 
 <body>
     <header>
-        <h1 class="nombre_juego">Lorem ipsum</h1>
+        <h1 class="nombre_juego">Odisea elemental</h1>
         <nav class="navegacion">
             <a href="../index.html">Inicio</a>
         </nav>
     </header>
-    <div class="register_form">
+    <div class="register_form" id="register_form">
         <form action="#" method="POST">
-            <h2>Crea tu Lorem Ipsum </h2>
+            <h2>Crea tu usuario </h2>
             <div class="form_box">
                 <label for="username">Usuario:</label>
                 <input type="text" id="usuaro" name="usuario" required>
@@ -40,13 +40,62 @@
                 <span></span>
                 Acepto los <a href="#" id="terminos_cond_boton">términos y condiciones</a>
             </label>
-            <div class="terminos_condiciones" id="terminos">
-                <p>Aemm nose que poner.. CINEEE:</p>
-                <p>Lorem ipsum ... aprobarnos el final</p>
-            </div>
             <button type="submit">Registrarme</button>
         </form>
     </div>
+
+    <div class="terminos_condiciones_popup" id="terminos_popup">
+        <div class="terminos_condiciones_content">
+            <span class="close_popup" id="close_popup">&times;</span>
+            <p>
+                TÉRMINOS Y CONDICIONES<br>
+                Última actualización: 19/06/2024<br>
+                <br>1. Introducción<br>
+                Bienvenido al juego “Odisea elemental” ("el Juego"). Al descargar, instalar o utilizar el Juego, aceptas
+                estar sujeto a estos términos y condiciones ("Términos"). Si no estás de acuerdo con estos Términos, no
+                deberías utilizar el Juego.<br>
+                <br>2. Edad Mínima<br>
+                El Juego está destinado a jugadores de 16 años en adelante. Al utilizar el Juego, confirmas que tienes
+                al menos 16 años. Si eres menor de 16 años, no tienes permiso para usar el Juego.<br>
+                <br>3. Uso del Juego<br>
+                El Juego es para uso personal y no comercial. No se permite la reventa, distribución o uso del Juego
+                para fines comerciales sin nuestro permiso expreso por escrito. Nos reservamos el derecho de modificar o
+                descontinuar el Juego en cualquier momento sin previo aviso.<br>
+                <br>4. Propiedad Intelectual<br>
+                Todos los derechos, títulos e intereses en y para el Juego, incluyendo pero no limitado a gráficos,
+                interfaces de usuario, scripts y software utilizados para implementar el Juego, son propiedad de Las
+                Plásticas o sus licenciantes. No se otorgan derechos sobre el Juego, excepto los expresamente
+                establecidos en estos Términos.<br>
+                <br>5. Conducta del Usuario<br>
+                Te comprometes a no:<br>
+                Utilizar el Juego para cualquier propósito ilegal.<br>
+                Interferir con o perturbar la integridad o el rendimiento del Juego.<br>
+                Intentar obtener acceso no autorizado al Juego o a sus sistemas o redes relacionados.<br>
+                Usar el Juego de cualquier manera que pueda infringir los derechos de propiedad intelectual de
+                otros.<br>
+                <br>6. Limitación de Responsabilidad<br>
+                El Juego se proporciona "tal cual" y "según disponibilidad", sin garantías de ningún tipo, ya sean
+                expresas o implícitas. Las Plásticas no será responsable por cualquier daño directo, indirecto,
+                incidental, especial, consecuente o ejemplar que resulte del uso o la incapacidad de uso del Juego.<br>
+                <br>7. Modificaciones a los Términos<br>
+                Nos reservamos el derecho de modificar estos Términos en cualquier momento. Las modificaciones serán
+                efectivas inmediatamente después de su publicación en nuestra página web o dentro del Juego. Es tu
+                responsabilidad revisar estos Términos periódicamente. El uso continuado del Juego después de la
+                publicación de cambios constituye tu aceptación de los mismos.<br>
+                <br>8. Contacto<br>
+                Si tienes alguna pregunta o inquietud sobre estos Términos, puedes contactarnos a través de la sección
+                de contacto en nuestra página web.<br>
+                <br>9. Ley Aplicable<br>
+                Estos Términos se regirán e interpretarán de acuerdo con las leyes de Argentina, sin dar efecto a sus
+                disposiciones sobre conflictos de leyes.<br>
+                <br>10. Acuerdo Completo<br>
+                Estos Términos constituyen el acuerdo completo entre tú y Las Plásticas en relación con el uso del Juego
+                y reemplazan cualquier otro acuerdo previo o contemporáneo, ya sea oral o escrito.
+            </p>
+            <button id="accept_terms">Aceptar</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
