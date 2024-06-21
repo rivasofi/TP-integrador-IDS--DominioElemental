@@ -4,17 +4,29 @@ document.body.addEventListener('click', function () {
 
 document.getElementById('form-open').addEventListener('click', function () {
     var loginForm = document.querySelector('.login_form');
-    loginForm.classList.toggle('show');
-});
+    var banner = document.querySelector('.banner');
 
-document.getElementById('cerrar_login').addEventListener('click', function() {
-    var loginForm = document.querySelector('.login_form');
-    if (loginForm.classList.contains('show')) {
-        loginForm.classList.toggle('show');
+    if (!loginForm.classList.contains('show')) {
+        loginForm.classList.add('show');
+        banner.style.opacity = '0';
+        banner.classList.add('hide');
+    } else {
+        loginForm.classList.remove('show');
+        banner.style.opacity = '1';
+        banner.classList.remove('hide');
     }
 });
 
-document.getElementById('toggle_contrasena').addEventListener('click', function() {
+document.getElementById('cerrar_login').addEventListener('click', function () {
+    var loginForm = document.querySelector('.login_form');
+    var banner = document.querySelector('.banner');
+
+    loginForm.classList.remove('show');
+    banner.style.opacity = '1';
+    banner.classList.remove('hide');
+});
+
+document.getElementById('toggle_contrasena').addEventListener('click', function () {
     var passwordField = document.getElementById('passwordField');
     if (passwordField.type === "password") {
         passwordField.type = "text";

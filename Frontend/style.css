@@ -93,7 +93,18 @@ body {
     background: url(recursos_multimedia/login.png) no-repeat;
     background-position: center;
     background-size: cover;
+}
 
+.banner {
+    width: 80%;
+    height: 70vh;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
 }
 
 .login_form h2 {
@@ -106,10 +117,9 @@ body {
 
 .login_form {
     display: block !important;
-    opacity:0;
+    opacity: 0;
     padding: 10px;
     width: 450px;
-    height: 100%;
     z-index: 100;
     background: transparent;
     border-radius: 18px;
@@ -121,6 +131,10 @@ body {
     backdrop-filter: blur(15px);
     box-shadow: 0 0 100px rgba(0, 0, 0, 0.781);
     transition: opacity 0.3s ease;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .login_form.show {
