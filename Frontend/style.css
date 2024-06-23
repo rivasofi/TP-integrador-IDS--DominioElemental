@@ -90,21 +90,12 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(recursos_multimedia/login.png) no-repeat;
     background-position: center;
     background-size: cover;
-}
-
-.banner {
-    width: 80%;
-    height: 70vh;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.3s ease;
+    background: url(recursos_multimedia/login.png);
+    background-position: center;
+    background-size: cover;
+    transition: background-image 1s ease-in-out;
 }
 
 .login_form h2 {

@@ -64,3 +64,42 @@ function mutear_audio() {
         icono.classList.add('bx-volume-full');
     }
 }
+
+let backgrounds = [
+    'url(recursos_multimedia/imagenes_login/login_2.png)',
+    'url(recursos_multimedia/imagenes_login/login_3.png)',
+    'url(recursos_multimedia/imagenes_login/login_4.png)',
+    'url(recursos_multimedia/imagenes_login/login_5.png)',
+    'url(recursos_multimedia/imagenes_login/login_6.png)',
+    'url(recursos_multimedia/imagenes_login/login_7.png)',
+    'url(recursos_multimedia/imagenes_login/login_8.png)',
+    'url(recursos_multimedia/imagenes_login/login_9.png)',
+    'url(recursos_multimedia/imagenes_login/login_10.png)',
+    'url(recursos_multimedia/imagenes_login/login_11.png)',
+    'url(recursos_multimedia/imagenes_login/login_12.png)',
+];
+
+function randomizar_fondos(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    randomizar_fondos(backgrounds);
+
+    let fondo_actual = 0;
+
+    function cambiar_fondo() {
+        fondo_actual = (fondo_actual + 1) % backgrounds.length;
+        document.body.style.backgroundImage = backgrounds[fondo_actual];
+    }
+
+    setTimeout(() => {
+        document.body.style.backgroundImage = 'url(recursos_multimedia/login.png)';
+    }, 100);
+
+    setInterval(cambiar_fondo, 4000);
+});
