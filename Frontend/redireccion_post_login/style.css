@@ -23,8 +23,8 @@ header {
 .navegacion {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the navigation links */
-    width: 600%; /* Adjust width as needed */
+    justify-content: center;
+    width: 600%;
 }
 
 .navegacion a {
@@ -32,9 +32,14 @@ header {
     text-decoration: none;
     color: white;
     font-weight: 500;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 135px;
+    margin-right: 135px;
     transition: 0.5s;
+}
+
+.navegacion a:hover{
+    color:#E88B40;
+    transform: scale(1.1);
 }
 
 .navegacion button {
