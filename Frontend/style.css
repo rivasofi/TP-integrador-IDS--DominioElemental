@@ -21,18 +21,24 @@ header {
     justify-content: space-between;
 }
 
-h1 {
-
-    font-size: 1.1;
-    color: #3D9493;
-    position: left;
-
+@keyframes cambio_color {
+    0% { color: #E88B40;
+        transform: scale(1); } 
+    50% { color:#3D9493; 
+        transform: scale(1.2);}
+    100% { color: #E88B40; 
+        transform: scale(1)}
 }
 
-h1:hover {
-    transform: scale(1.1);
-    color: #E88B40;
-
+.subpagina a {
+    position: relative;
+    font-size: 19px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    margin-right: 10px;
+    animation: cambio_color 5s infinite;
 }
 
 header {
