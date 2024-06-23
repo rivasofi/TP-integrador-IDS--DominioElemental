@@ -10,6 +10,7 @@ document.getElementById('form-open').addEventListener('click', function () {
         loginForm.classList.add('show');
         banner.style.opacity = '0';
         banner.classList.add('hide');
+        enable_form_elements();
     } else {
         loginForm.classList.remove('show');
         banner.style.opacity = '1';
@@ -34,6 +35,16 @@ document.getElementById('toggle_contrasena').addEventListener('click', function 
         passwordField.type = "password";
     }
 });
+
+function enable_form_elements() {
+    var inputs = document.querySelectorAll('.login_form input');
+    var buttons = document.querySelectorAll('.login_form button');
+    var links = document.querySelectorAll('.login_form a');
+
+    inputs.forEach(input => input.disabled = false);
+    buttons.forEach(button => button.disabled = false);
+    links.forEach(link => link.style.pointerEvents = 'auto');
+}
 
 function reproducir_audio() {
     var audio = document.getElementById("background-audio");

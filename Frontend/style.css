@@ -261,6 +261,17 @@ body {
     transform: rotate(45deg);
 }
 
+.inactive {
+    pointer-events: none;
+    opacity: 0;
+}
+
+.inactive input,
+.inactive button,
+.inactive a {
+    pointer-events: none;
+}
+
 footer {
     position: fixed;
     bottom: 0;
