@@ -60,28 +60,37 @@ function mutear_audio() {
     }
 }
 
-let backgrounds = [
-    'url(recursos_multimedia/imagenes_login/login_2.png)',
-    'url(recursos_multimedia/imagenes_login/login_3.png)',
-    'url(recursos_multimedia/imagenes_login/login_4.png)',
-    'url(recursos_multimedia/imagenes_login/login_5.png)',
-    'url(recursos_multimedia/imagenes_login/login_6.png)',
-    'url(recursos_multimedia/imagenes_login/login_7.png)',
-    'url(recursos_multimedia/imagenes_login/login_8.png)',
-    'url(recursos_multimedia/imagenes_login/login_9.png)',
-    'url(recursos_multimedia/imagenes_login/login_10.png)',
-    'url(recursos_multimedia/imagenes_login/login_11.png)',
-    'url(recursos_multimedia/imagenes_login/login_12.png)',
-];
-
-function randomizar_fondos(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
+function precargarImagenes(imagenes) {
+    imagenes.forEach(function (imagen) {
+        var img = new Image();
+        img.src = imagen.replace('url(', '').replace(')', '').replace(/\"/gi, "");
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    
+    let backgrounds = [
+        'url(recursos_multimedia/imagenes_login/login_2.png)',
+        'url(recursos_multimedia/imagenes_login/login_3.png)',
+        'url(recursos_multimedia/imagenes_login/login_4.png)',
+        'url(recursos_multimedia/imagenes_login/login_5.png)',
+        'url(recursos_multimedia/imagenes_login/login_6.png)',
+        'url(recursos_multimedia/imagenes_login/login_7.png)',
+        'url(recursos_multimedia/imagenes_login/login_8.png)',
+        'url(recursos_multimedia/imagenes_login/login_9.png)',
+        'url(recursos_multimedia/imagenes_login/login_10.png)',
+        'url(recursos_multimedia/imagenes_login/login_11.png)',
+        'url(recursos_multimedia/imagenes_login/login_12.png)',
+    ];
+
+    precargarImagenes(backgrounds);
+
+    function randomizar_fondos(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
 
     randomizar_fondos(backgrounds);
 
