@@ -4,27 +4,22 @@ document.body.addEventListener('click', function () {
 
 document.getElementById('form-open').addEventListener('click', function () {
     var loginForm = document.querySelector('.login_form');
-    var banner = document.querySelector('.banner');
 
     if (!loginForm.classList.contains('show')) {
+        loginForm.classList.remove('inactive');
         loginForm.classList.add('show');
-        banner.style.opacity = '0';
-        banner.classList.add('hide');
         enable_form_elements();
     } else {
         loginForm.classList.remove('show');
-        banner.style.opacity = '1';
-        banner.classList.remove('hide');
+        loginForm.classList.add('inactive');
     }
 });
 
 document.getElementById('cerrar_login').addEventListener('click', function () {
     var loginForm = document.querySelector('.login_form');
-    var banner = document.querySelector('.banner');
 
     loginForm.classList.remove('show');
-    banner.style.opacity = '1';
-    banner.classList.remove('hide');
+    loginForm.classList.add('inactive');
 });
 
 document.getElementById('toggle_contrasena').addEventListener('click', function () {
