@@ -116,7 +116,7 @@ body {
     display: block !important;
     opacity: 0;
     padding: 10px;
-    width: 450px;
+    width: 680px;
     z-index: 100;
     background: transparent;
     border-radius: 18px;
@@ -194,4 +194,32 @@ footer {
 .boton_volumen:hover {
     color: aliceblue;
     background-color: #E88B40;
+}
+
+.perfiles {
+    display: flex;
+    gap: 20px;
+    max-width: 100%; 
+    padding: 20px;
+    box-sizing: border-box; 
+}
+.perfil {
+    background-color: rgb(63, 63, 63);
+    color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.perfil:hover {
+    transform: translateY(-5px);
+}
+.perfil img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
 }
