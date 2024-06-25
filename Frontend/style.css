@@ -223,3 +223,16 @@ footer {
     object-fit: cover;
     margin-bottom: 10px;
 }
+
+.perfil:nth-child(1) {
+    background-color: #002347;
+  }
+  .perfil:nth-child(2) {
+    background-color: #003366;
+  }
+  .perfil:nth-child(3) {
+    background-color: #FD7702;
+  }
+  .perfil:nth-child(4) {
+    background-color: #FF5003;
+  }
