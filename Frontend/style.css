@@ -22,11 +22,11 @@ header {
 }
 
 @keyframes cambio_color {
-    0% { color: #E88B40;
+    0% { color: #FF8E00;
         transform: scale(1); } 
-    50% { color:#3D9493; 
+    50% { color:#035eb9; 
         transform: scale(1.2);}
-    100% { color: #E88B40; 
+    100% { color: #FF8E00; 
         transform: scale(1)}
 }
 
@@ -65,7 +65,7 @@ header {
 
 .navegacion a:hover {
     text-decoration: underline;
-    color: #3D9493;
+    color: #035eb9;
 
 }
 
@@ -87,7 +87,7 @@ header {
 
 .navegacion .boton_login:hover {
     color: aliceblue;
-    background-color: #E88B40;
+    background-color: #FD7702;
     box-shadow: 0 5px 20px rgba(182, 166, 92, 0.4);
 }
 
@@ -193,7 +193,7 @@ footer {
 
 .boton_volumen:hover {
     color: aliceblue;
-    background-color: #E88B40;
+    background-color: #FF8E00;
 }
 
 .perfiles {
