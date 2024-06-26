@@ -24,14 +24,14 @@ header {
 h1 {
 
     font-size: 1.1;
-    color: #3D9493;
+    color: #003366;
     position: left;
 
 }
 
 h1:hover {
     transform: scale(1.1);
-    color: #E88B40;
+    color: #FD7702;
 
 }
 
@@ -53,7 +53,7 @@ header {
 
 .navegacion a:hover {
     text-decoration: underline;
-    color: #3D9493;
+    color: #035eb9;
 
 }
 
