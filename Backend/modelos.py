@@ -9,17 +9,6 @@ class Carta(db.Model):
     elemento = db.Column(db.String(100))
     poder = db.Column(db.Integer)
 
-class Registro(db.Model):
-    __tablename__ = 'registro'
-    id = db.Column(db.Integer, primary_key=True)
-    usuario = db.Column(db.String(1000), nullable=False)
-    email = db.Column(db.String(1000), nullable=False)
-    contraseña = db.Column(db.String(1000), nullable=False)
-    confirmar_contraseña = db.Column(db.String(1000), nullable=False)
-
-    __table_args__ = (
-        CheckConstraint('confirmar_contraseña = contraseña', name='chk_confirmacion_contraseña'),
-    )
 
 
 
