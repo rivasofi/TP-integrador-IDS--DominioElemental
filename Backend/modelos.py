@@ -9,6 +9,12 @@ class Carta(db.Model):
     elemento = db.Column(db.String(100))
     poder = db.Column(db.Integer)
 
+class Usuario(db.Model):
+    __tablename__= 'usuarios'
+    id = db.Column(db.Integer,primary_key=True)
+    nombre= db.Column(db.string(255),nulltable=False)
+    plata= db.Column(db.integer,nulltable=False)
+    fecha_creacion = db.Column(db.DateTime, default=datetime.datetime.now())
 
 
 
