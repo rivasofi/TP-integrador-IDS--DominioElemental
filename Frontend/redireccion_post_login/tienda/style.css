@@ -110,3 +110,106 @@ footer {
     opacity: 40%;
     font-size: 20px;
 }
+
+.tienda {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+}
+.item {
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: scale(1.008);
+}
+.pack_aleatorio:hover {
+    transform: scale(1.008);
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #444;
+}
+
+.pack_aleatorio {
+    grid-row: span 2;
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.pack_aleatorio img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.detalles_items {
+    padding: 15px;
+}
+
+.detalles_items h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.detalles_items p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.boton_comprar {
+    background-color: #003366;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.boton_comprar:hover {
+    background-color: #FF5003;
+}
+
+.pack_agua .detalles_items h2 {
+    color: #0077cc;
+}
+
+.pack_fuego .detalles_items h2 {
+    color: #ff3333; 
+}
+
+.pack_hielo .detalles_items h2 {
+    color: #cde4f3;
+}
+
+.pack_tierra .detalles_items h2 {
+    color: #604a33; 
+}
+
+.pack_aleatorio .detalles_items h2{
+    animation: cambio_color 5s infinite;
+}
+
+@keyframes cambio_color {
+    0% { color: #ff3333;}
+    25% { color:#0077cc;} 
+    50% { color: #cde4f3;} 
+    75% { color: #604a33;} 
+    100% { color: #ff3333;} 
+}
