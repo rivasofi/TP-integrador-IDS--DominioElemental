@@ -68,7 +68,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: url(recursos_multimedia/fond_tablero.jpg) no-repeat;
+    background: url(../recursos_multimedia/fond_tablero.jpg) no-repeat;
     background-position: center;
     backdrop-filter: blur(10px);
     background-size: cover;
@@ -87,7 +87,7 @@ footer {
 
 .boton_volumen {
     color: white;
-    font-size: 1.1em;
+    font-size: 1.84em;
     font-weight: 500;
     margin-left: 40px;
     margin-top: 4px;
@@ -182,8 +182,10 @@ footer {
 
 .slide img {
     max-width: 70%;
+    margin: auto;
     height: auto; 
     display: block;
+    margin-top: 20px;
     margin-bottom: 20px; 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
