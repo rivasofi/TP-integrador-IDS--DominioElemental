@@ -135,7 +135,7 @@ footer {
 .item:hover {
     transform: scale(1.008);
 }
-.pack_aleatorio:hover {
+.elem_grande:hover {
     transform: scale(1.008);
 }
 
@@ -146,7 +146,7 @@ footer {
     border-bottom: 1px solid #444;
 }
 
-.pack_aleatorio {
+.elem_grande {
     grid-row: span 2;
     background-color: #222;
     border-radius: 10px;
@@ -156,7 +156,7 @@ footer {
     transition: transform 0.3s ease;
 }
 
-.pack_aleatorio img {
+.elem_grande img {
     width: 100%;
     height: auto;
 }
@@ -207,7 +207,7 @@ footer {
     color: #604a33; 
 }
 
-.pack_aleatorio .detalles_items h2{
+.elem_grande .detalles_items h2{
     animation: cambio_color 5s infinite;
 }
 
