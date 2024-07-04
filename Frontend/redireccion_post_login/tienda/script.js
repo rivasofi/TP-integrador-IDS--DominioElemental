@@ -41,8 +41,9 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener('DOMContentLoaded', function () {
     const elem_grande = document.querySelector('.elem_grande img');
     const imagenes = [
-        "../../recursos_multimedia/Infografía salud mental orgánico creativo rosado y blanco.png",
-        "../../recursos_multimedia/icono_conra.jpeg",
+        "../../recursos_multimedia/aleatorio_1.png",
+        "../../recursos_multimedia/aleatorio_2.png",
+        "../../recursos_multimedia/aleatorio_3.png",
     ];
 
     let index = 0;

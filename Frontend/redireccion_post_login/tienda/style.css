@@ -156,7 +156,7 @@ footer {
     overflow: hidden;
     position: relative;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    transition: transform 1s ease;
     width: 200px;
     height: 665px;
 }
