@@ -173,11 +173,13 @@ footer {
 .detalles_items h2 {
     font-size: 18px;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .detalles_items p {
     font-size: 14px;
     color: #ccc;
+    text-align: justify;
 }
 
 .ganar_dinero {
@@ -204,29 +206,76 @@ footer {
 }
 
 .pack_agua .detalles_items h2 {
-    color: #0077cc;
+    animation: cambio_color_agua 5s infinite;
+    text-align: center;
+
+}
+@keyframes cambio_color_agua {
+    0% { color: #0f5e9c;}
+    25% { color:#2389da;} 
+    50% { color: #1ca3ec;} 
+    75% { color: #5abcd8;} 
+    100% { color: #0f5e9c;} 
 }
 
 .pack_fuego .detalles_items h2 {
-    color: #ff3333; 
+    animation: cambio_color_fuego 5s infinite;
+    text-align: center;
+}
+@keyframes cambio_color_fuego{
+    0% { color: #ff0000;}
+    25% { color:#ff5a00;} 
+    50% { color: #ff9a00;} 
+    75% { color: #ffce00;} 
+    100% { color: #ff0000;} 
 }
 
 .pack_hielo .detalles_items h2 {
-    color: #cde4f3;
+    animation: cambio_color_hielo 5s infinite;
+    text-align: center;
+}
+@keyframes cambio_color_hielo {
+    0% { color: #ffffff;}
+    25% { color:#b9e8ea;} 
+    50% { color: #86d6d8;} 
+    75% { color: #3fd0d4;} 
+    100% { color: #ffffff;} 
 }
 
 .pack_tierra .detalles_items h2 {
-    color: #604a33; 
+    animation: cambio_color_tierra 5s infinite;
+    text-align: center;
 }
-
-.elem_grande .detalles_items h2{
-    animation: cambio_color 5s infinite;
-}
-
-@keyframes cambio_color {
+@keyframes cambio_color_aleatorio {
     0% { color: #ff3333;}
     25% { color:#0077cc;} 
     50% { color: #cde4f3;} 
     75% { color: #604a33;} 
     100% { color: #ff3333;} 
+}
+
+.elem_grande .detalles_items h2{
+    animation: cambio_color_aleatorio 5s infinite;
+    text-align: center;
+}
+
+@keyframes cambio_color_tierra {
+    0% { color: #b69f66;}
+    25% { color:#6b5428;} 
+    50% { color: #6b5428;} 
+    75% { color: #76552b;} 
+    100% { color: #b69f66;} 
+}
+
+.ganar_dinero .detalles_items h2 {
+    animation: color_oro 5s infinite;
+    text-align: center;
+}
+
+@keyframes color_oro {
+    0% { color: #AE8626;}
+    25% { color:#F7EF8A;} 
+    50% { color: #F7EF8A;} 
+    75% { color: #D2AC47;} 
+    100% { color: #AE8626;} 
 }
