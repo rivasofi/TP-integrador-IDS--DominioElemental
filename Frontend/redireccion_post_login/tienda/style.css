@@ -18,11 +18,9 @@ header {
     align-items: center;
     z-index: 100;
     justify-content: space-between;
-}
-header {
     background-color: #00000057;
-    padding: 10px 20px;
 }
+
 .navegacion {
     display: flex;
     align-items: center;
@@ -75,7 +73,11 @@ body {
     background-position: center;
     backdrop-filter: blur(10px);
     background-size: cover;
-    padding-bottom: 80px;
+}
+
+main {
+    margin-top: 130px;
+    width: 100%;
 }
 
 footer {
@@ -90,7 +92,7 @@ footer {
 
 .boton_volumen {
     color: white;
-    font-size: 1.1em;
+    font-size: 1.84em;
     font-weight: 500;
     margin-left: 40px;
     margin-top: 4px;
@@ -114,11 +116,10 @@ footer {
     font-size: 20px;
 }
 
-.tienda {
+.tienda_grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
-    padding: 20px;
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -130,6 +131,8 @@ footer {
     position: relative;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    width: 210px;
+    height: 400px;
 }
 
 .item:hover {
@@ -154,11 +157,13 @@ footer {
     position: relative;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    width: 200px;
+    height: 665px;
 }
 
 .elem_grande img {
     width: 100%;
-    height: auto;
+    height: 450px;
 }
 
 .detalles_items {
@@ -173,6 +178,13 @@ footer {
 .detalles_items p {
     font-size: 14px;
     color: #ccc;
+}
+
+.ganar_dinero {
+    grid-column: -5 / -1;
+    grid-row: span 2;
+    height: 245px;
+    width: 900px;
 }
 
 .boton_comprar {
