@@ -21,41 +21,6 @@ function mutear_audio() {
     }
 }
 
-document.addEventListener('DOMContentLoaded',function(){
-    const slides=document.querySelectorAll('.slide');
-    const totalSlides=slides.length;
-    let currentSlide=0;
-    function mostrarSlide(index){
-        slides.forEach((slide, idx)=>{
-            if (idx===index){
-                slide.classList.add('activa');
-            } else{
-                slide.classList.remove('activa');
-            }
-        });
-    }
-    function siguienteSlide(){
-        if (currentSlide === totalSlides - 1){
-            return;
-        }
-        currentSlide=(currentSlide + 1)%totalSlides;
-        mostrarSlide(currentSlide);
-    }
-    function anteriorSlide(){
-        if (currentSlide===0){
-            return;
-        }
-        currentSlide =(currentSlide-1+totalSlides)%totalSlides;
-        mostrarSlide(currentSlide);
-    }
-    document.getElementById('boton_siguiente').addEventListener('click',function(){
-        siguienteSlide();
-    });
-    document.getElementById('boton_anterior').addEventListener('click',function(){
-        anteriorSlide();
-    });
-});
-
 function redireccionar(url) {
     window.location.href = url;
 }
