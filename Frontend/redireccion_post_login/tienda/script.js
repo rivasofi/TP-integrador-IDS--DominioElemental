@@ -38,3 +38,23 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const elem_grande = document.querySelector('.elem_grande img');
+    const imagenes = [
+        "../../recursos_multimedia/Infografía salud mental orgánico creativo rosado y blanco.png",
+        "../../recursos_multimedia/icono_conra.jpeg",
+    ];
+
+    let index = 0;
+
+    function cambiar_foto() {
+        elem_grande.src = imagenes[index];
+
+        index++;
+        if (index >= imagenes.length) {
+            index = 0;
+        }
+    }
+    cambiar_foto();
+    setInterval(cambiar_foto, 5000);
+});
