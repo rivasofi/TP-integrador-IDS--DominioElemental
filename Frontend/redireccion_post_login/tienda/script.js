@@ -59,3 +59,17 @@ document.addEventListener('DOMContentLoaded',function(){
 function redireccionar(url) {
     window.location.href = url;
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const items = document.querySelectorAll('.item');
+
+    const hoverSound = document.getElementById('hover-sound');
+    
+    items.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            hoverSound.currentTime = 0;
+            hoverSound.play();
+        });
+    });
+    
+});

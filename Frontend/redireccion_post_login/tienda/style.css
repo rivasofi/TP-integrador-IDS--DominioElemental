@@ -17,9 +17,12 @@ header {
     display: flex;
     align-items: center;
     z-index: 100;
-    background-color: #00000057;
+    justify-content: space-between;
 }
-
+header {
+    background-color: #00000057;
+    padding: 10px 20px;
+}
 .navegacion {
     display: flex;
     align-items: center;
@@ -68,7 +71,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: url(/Frontend/recursos_multimedia/background_tienda.jpeg) no-repeat;
+    background: url(../../recursos_multimedia/background_tienda.png) no-repeat;
     background-position: center;
     backdrop-filter: blur(10px);
     background-size: cover;
@@ -113,10 +116,13 @@ footer {
 
 .tienda {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
+
 .item {
     background-color: #222;
     border-radius: 10px;
@@ -153,7 +159,6 @@ footer {
 .pack_aleatorio img {
     width: 100%;
     height: auto;
-    display: block;
 }
 
 .detalles_items {
