@@ -279,3 +279,59 @@ footer {
     75% { color: #D2AC47;} 
     100% { color: #AE8626;} 
 }
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.plata {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.plata span {
+    color: white;
+    font-size: 18px;
+
+    transition: all 0.3s ease;
+}
+
+.plata:hover span {
+    color:#E88B40;
+}
+
+.plata .info_plata {
+    visibility: hidden;
+    width: 220px;
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.plata:hover .info_plata {
+    visibility: visible;
+    opacity: 1;
+}
+
+.plata .info_plata::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    text-align: justify;
+    border-color: #003F7D transparent transparent transparent;
+}
