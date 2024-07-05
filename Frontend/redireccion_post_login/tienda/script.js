@@ -59,3 +59,14 @@ document.addEventListener('DOMContentLoaded', function () {
     cambiar_foto();
     setInterval(cambiar_foto, 5000);
 });
+
+function confirmarCompra(nombrePack, precio) {
+    if (confirm(`¿Estas seguro de que queres comprar el ${nombrePack} por ${precio} monedas?`)) {
+        alert('Compra realizada exitosamente!');
+
+        actualizarSaldoDisponible(precio);
+    } else {
+        alert('Compra cancelada.');
+    }
+}
+
