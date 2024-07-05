@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         presentacionContenedor.classList.add('oculto');
         presentacionContenedor.style.animation = 'desvanecer 0.3s ease forwards';
         sessionStorage.setItem('presentacion_vista', 'true');
-    }    
+    }
 
     document.getElementById('boton_saltar').addEventListener('click', function () {
         ocultar_presentacion();
@@ -56,51 +56,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    const usuarioId = 1; // no olvidarme de reemplazar con el ID del usuario
-    const cartasContainer = document.getElementById('cartas-container');
+function mostrar_banner() {
+    const tituloCartas = document.getElementById('titulo-cartas');
+}
 
-    fetch(`/cartas_usuario/${usuarioId}`)
-        .then(response => response.json())
-        .then(data => {
-            if (data.length === 0) {
-                mostrar_banner();
-            } else {
-                ocultar_banner();
-                mostrar_cartas(data);
-            }
-        })
-        .catch(error => {
-            console.error('Error al obtener las cartas:', error);
-        });
-
-    function mostrar_cartas(cartas) {
-        cartas.forEach(carta => {
-            const cartaDiv = document.createElement('div');
-            cartaDiv.classList.add('carta');
-
-            const img = document.createElement('img');
-            img.src = carta.imagen_url;
-            img.alt = carta.nombre;
-
-            const nombre = document.createElement('p');
-            nombre.textContent = carta.nombre;
-
-            cartaDiv.appendChild(img);
-            cartaDiv.appendChild(nombre);
-            cartasContainer.appendChild(cartaDiv);
-        });
-    }
-
-    function mostrar_banner() {
-        const tituloCartas = document.getElementById('titulo-cartas');
-        const imagenCartas = document.getElementById('imagen-cartas');
-        imagenCartas.style.display = 'block';
-    }
-
-    function ocultar_banner() {
-        const tituloCartas = document.getElementById('titulo-cartas');
-        const imagenCartas = document.getElementById('imagen-cartas');
-        imagenCartas.style.display = 'none';
-    }
-});
+function ocultar_banner() {
+    const tituloCartas = document.getElementById('titulo-cartas');
+}
