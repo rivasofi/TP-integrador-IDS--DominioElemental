@@ -167,6 +167,7 @@ header {
     0% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
     }
@@ -386,6 +387,7 @@ footer {
     border-radius: 10px;
     transition: 0.3s;
 }
+
 
 .boton_volumen:hover {
     color: aliceblue;

@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const usuarioId = 1; // no olvidarme de reemplazar con el ID del usuario actual
+    const usuarioId = 1; // no olvidarme de reemplazar con el ID del usuario
     const cartasContainer = document.getElementById('cartas-container');
 
     fetch(`/cartas_usuario/${usuarioId}`)
