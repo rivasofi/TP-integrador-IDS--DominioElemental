@@ -71,6 +71,6 @@ function confirmar_compra(nombrePack, precio) {
 }
 
 function sonido_compra() {
-    const audioCompra = new Audio('');
+    const audioCompra = new Audio('../../recursos_multimedia/sonido_compra.mp3');
     audioCompra.play();
 }
