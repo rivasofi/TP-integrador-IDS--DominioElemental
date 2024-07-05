@@ -129,6 +129,7 @@ footer {
 .boton_volumen:hover {
     color: aliceblue;
     background-color: #FF8E00;
+    cursor: pointer;
 }
 
 .presentacion_contenedor {
@@ -192,7 +193,6 @@ footer {
     padding: 10px 20px;
     margin: 0 10px;
     border-radius: 5px;
-    font-size: 18px;
     transition: background-color 0.3s ease;
 }
 

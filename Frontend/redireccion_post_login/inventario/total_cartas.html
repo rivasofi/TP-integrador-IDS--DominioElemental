@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card game V2</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    
+    <audio id="background-audio" src="../../recursos_multimedia/login-musica.mp3" autoplay loop></audio>
+
+    <header>
+        <nav class="navegacion">
+            <a href="../index.html">Guía inicial</a>
+            <a href="../Frontend/contacto/index.html">Inventario</a>
+            <nav class="batalla_efecto">
+                <a href="../Frontend/contacto/index.html">BATALLA</a>
+            </nav>
+            <a href="../Frontend/merch/index.html">Tienda</a>
+            <button onclick="redireccionar('../../index.html')">Logout</button>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="todas_las_cartas">Todas las cartas</h1>
+        <button class="volver" onclick="redireccionar('index.html')">Volver a mis cartas</button>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <button class="boton_volumen" onclick="mutear_audio()"><i class='bx bx-volume-full icon-volume'></i></button>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>
