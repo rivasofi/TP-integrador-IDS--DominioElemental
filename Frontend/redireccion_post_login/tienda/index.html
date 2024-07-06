@@ -92,6 +92,19 @@
                     class='bx bx-volume-full icon-volume'></i></button>
         </div>
     </footer>
+    <div id="cartel_popup" class="cartel_popup"></div>
+<div id="cartel_compra" class="cartel">
+    <div class="contenido_cartel">
+        <p id="mensaje_confirmar">¿Estás seguro que deseas realizar esta compra?</p>
+        <div id="botones_compra">
+            <button class="botones_compra" onclick="realizar_compra()">Confirmar</button>
+            <button class="botones_compra" onclick="cerrar_cartel()">Cancelar</button>
+        </div>
+        <div id="mensaje-exito" class="modal-exito">
+            <p>Compra realizada con exito. Buena Suerte!</p>
+        </div>
+    </div>
+</div>
     <script src="script.js"></script>
 
 </body>
