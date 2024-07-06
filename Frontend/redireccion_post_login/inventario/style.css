@@ -227,6 +227,18 @@ body {
     width: auto;
 }
 
+.titulo-y-botones {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.volver {
+    height: 40px;
+    margin-top: 50px;
+    margin-left: 40px;
+}
+
 h1 {
     color: white;
     font-size: 35px;
@@ -306,10 +318,14 @@ h1 {
 }
 
 .controles {
-    margin-top: 20px;
+    margin-top: 600px;
     display: flex;
     justify-content: center;
     opacity: 90%;
+}
+
+.controles .ultima_slide {
+    margin-top: 140px;
 }
 
 .controles button {
@@ -337,23 +353,6 @@ h1 {
     font-size: 21px;
 }
 
-.carta {
-    display: inline-block;
-    margin: 10px;
-    text-align: center;
-}
-
-.carta img {
-    width: 100px;
-    height: 150px;
-}
-
-.carta p {
-    margin: 5px 0 0;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
 .no_cartas {
     width: auto;
     height: 550px;
@@ -361,6 +360,24 @@ h1 {
     margin: 0 auto;
     margin-bottom: 20px;
     border-radius: 7px;
+}
+
+.grid {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+}
+
+.grid img {
+    width: auto;
+    height: 220px;
+}
+
+.grid .imagen-chica {
+    width: auto;
+    height: 180px;
 }
 
 footer {
