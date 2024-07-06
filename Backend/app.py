@@ -13,7 +13,6 @@ migrate = Migrate(app, db)
 from modelos import Carta
 
 
-
 def load_image_as_binary(relative_path):
     with open(relative_path, 'rb') as file:
         return file.read()
