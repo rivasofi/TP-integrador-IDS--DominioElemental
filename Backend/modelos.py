@@ -7,7 +7,8 @@ class Carta(db.Model):
     nombre = db.Column(db.String(100))
     elemento = db.Column(db.String(100))
     poder = db.Column(db.Integer)
-    imagen = db.Column(db.LargeBinary)  # Columna para almacenar imágenes
+    imagen_frente = db.Column(db.LargeBinary) 
+    imagen_dorso = db.Column(db.LargeBinary)   
 
     def __repr__(self):
         return f'<Carta {self.nombre}>'
