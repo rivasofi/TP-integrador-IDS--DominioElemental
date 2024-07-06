@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    
+
     <audio id="background-audio" src="../../recursos_multimedia/login-musica.mp3" autoplay loop></audio>
 
     <header>
@@ -26,17 +26,28 @@
     </header>
 
     <div class="container">
-        <h1 class="todas_las_cartas">Todas las cartas</h1>
-        <button class="volver" onclick="redireccionar('index.html')">Volver a mis cartas</button>
+        <div class="titulo-y-botones">
+            <h1 class="todas_las_cartas">Todas las cartas</h1>
+            <button onclick="redireccionar('index.html')" class="volver">Volver</button>
+        </div>
+        <div class="grid" id="grid_imagenes"></div>
+    </div>
+
+    <div class="controles">
+        <button id="boton_anterior" onclick="cambiarLugar(-1)"><i class="bx bx-chevron-left"></i></button>
+        <button id="boton_siguiente" onclick="cambiarLugar(1)"><i class="bx bx-chevron-right"></i></button>
     </div>
 
     <footer>
         <div class="footer-content">
-            <button class="boton_volumen" onclick="mutear_audio()"><i class='bx bx-volume-full icon-volume'></i></button>
+            <button class="boton_volumen" onclick="mutear_audio()"><i
+                    class='bx bx-volume-full icon-volume'></i></button>
         </div>
     </footer>
 
+    <script src="todas_cartas.js"></script>
     <script src="../script.js"></script>
+
 </body>
 
 </html>
