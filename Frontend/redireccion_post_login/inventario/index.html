@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<audio id="background-audio" src="../../recursos_multimedia/login-musica.mp3" autoplay loop></audio>
+
+<header>
+    <nav class="navegacion">
+        <a href="../index.html">Guía inicial</a>
+        <a href="../inventario/index.html">Inventario</a>
+        <nav class="batalla_efecto">
+            <a href="../batalla/index.html">BATALLA</a>
+        </nav>
+        <a href="../tienda/index.html">Tienda</a>
+        <button onclick="redireccionar('../../index.html')">Logout</button>
+    </nav>
+</header>
+
+<div class="presentacion_contenedor oculto">
+    <section class="presentacion">
+        <div id="slide1" class="slide activa">
+            <h2>Te damos la bienvenida al inventario
+            </h2>
+            <p>Acá vas a poder ver todas las cartas en tu posesión, que son aquellas con las que vas a jugar. Estas
+                tienen un determinado elemento y puntos de poder, que te van a servir a la hora de batallar.</p>
+        </div>
+        <div id="slide2" class="slide">
+            <h2 class="elementos_titulo">Elementos</h2>
+            <p>Una carta puede tener <b>solo un</b> elemento, que se va a mostrar en la esquina superior izquierda de la
+                parte delantera de la carta y en el dorso. Puede parecer que algunos elementos son mas fuertes que otros
+                ¡pero esto no es así! Cada elemento da su propia batalla, así
+                que no te desanimes si no te tocó el que querías, siempre podes necesitarlo cuando menos lo
+                esperas.</p>
+        </div>
+        <div id="slide3" class="slide">
+            <h2 class="puntos_de_poder">Puntos de poder</h2>
+            <p>Los puntos de poder de una carta se utilizan en caso de un "empate", que ocurre cuando los elementos de
+                las cartas en batalla coinciden. En caso de que esto ocurra, ganará la carta con mayor puntaje, ya que
+                será aquella considerada "la mas fuerte", por lo que podemos afirmar que en sentido de puntos <b>si
+                    existen cartas mas fuertes que otras.</b></p>
+        </div>
+        <div id="slide4" class="slide">
+            <h2>¿Cómo consigo cartas?</h2>
+            <p>¡Que buena pregunta! Para poder adquirir más cartas, podes dirigirte a la sección "tienda", donde podras
+                comprar sobres de cartas aleatorias con el dinero que consigas en el juego. </p>
+        </div>
+        <div id="slide5" class="slide">
+            <h2>Buenísimo, ¿entonces como consigo plata?</h2>
+            <p>Vas a poder aumentar tu cantidad de dinero ganando batallas, además, cada 30 segundos se va a desbloquear
+                la sección "ganar dinero" en la tienda, donde se te hará una pregunta y, en caso de responderla bien,
+                conseguirás una moneda.
+                Si es la primera vez que ingresas, tendrás 30 monedas ingresadas en tu usuario para comprar tus primeros
+                sobres (recomendamos comprar el aleatorio).</p>
+        </div>
+        <div id="slide6" class="slide">
+            <h2>Navegación</h2>
+            <p>¡Perfecto! Ahora también sabes sobre el sistema de cartas que utilizará el juego, para navegar en tu
+                inventario podes usar las flechas que se encuentran al final de la grilla en caso de tener una gran
+                cantidad de cartas ¡que te diviertas abriendo sobres! </p>
+        </div>
+
+        <div class="controles_tutorial">
+            <button id="boton_anterior"><i class="bx bx-chevron-left"></i></button>
+            <button id="boton_saltar"><i class="boton_saltar">Omitir</i></button>
+            <button id="boton_siguiente"><i class="bx bx-chevron-right"></i></button>
+        </div>
+    </section>
+</div>
+
+<div>
+    <h1>Tus cartas</h1>
+    <img class="no_cartas" src="../../recursos_multimedia/no_cartas.png">
+    <button onclick="redireccionar('total_cartas.html')" class="todas_cartas">Total de cartas que podes obtener</button>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <button class="boton_volumen" onclick="mutear_audio()"><i class='bx bx-volume-full icon-volume'></i></button>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="../script.js"></script>
+
+</body>
+
+</html>

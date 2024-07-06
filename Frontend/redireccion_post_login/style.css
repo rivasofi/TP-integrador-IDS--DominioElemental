@@ -27,7 +27,7 @@ header {
     width: 600%;
 }
 
-.navegacion a {
+.navegacion > a:not(.batalla_efecto a) {
     font-size: 18px;
     text-decoration: none;
     color: white;
@@ -63,12 +63,38 @@ header {
     box-shadow: 0 5px 20px rgba(182, 166, 92, 0.4);
 }
 
+@keyframes cambio_color {
+    0% { color: #fc910e;
+        text-shadow: 0 0 10px #fc910e;
+        transform: scale(1); } 
+    50% { color:#ff7300;
+        text-shadow: 0 0 10px #ff7300; 
+        transform: scale(1.2);}
+    75% { color: #ffba66;
+        text-shadow: 0 0 10px #ffba66;
+        transform: scale(1.1)}
+    100% { color: #fc910e;
+        text-shadow: 0 0 10px #fc910e; 
+        transform: scale(1)}
+}
+
+.batalla_efecto a {
+    position: relative;
+    font-size: 18px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    margin-right: 10px;
+    animation: cambio_color 3s infinite;
+}
+
 body {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: url(recursos_multimedia/fond_tablero.jpg) no-repeat;
+    background: url(../recursos_multimedia/tutorial_bg.png) no-repeat;
     background-position: center;
     backdrop-filter: blur(10px);
     background-size: cover;
@@ -87,7 +113,7 @@ footer {
 
 .boton_volumen {
     color: white;
-    font-size: 1.1em;
+    font-size: 1.84em;
     font-weight: 500;
     margin-left: 40px;
     margin-top: 4px;
@@ -103,6 +129,7 @@ footer {
 .boton_volumen:hover {
     color: aliceblue;
     background-color: #FF8E00;
+    cursor: pointer;
 }
 
 .presentacion_contenedor {
@@ -166,7 +193,6 @@ footer {
     padding: 10px 20px;
     margin: 0 10px;
     border-radius: 5px;
-    font-size: 18px;
     transition: background-color 0.3s ease;
 }
 
@@ -182,8 +208,10 @@ footer {
 
 .slide img {
     max-width: 70%;
+    margin: auto;
     height: auto; 
     display: block;
+    margin-top: 20px;
     margin-bottom: 20px; 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
