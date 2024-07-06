@@ -13,7 +13,7 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 # Importar modelos después de inicializar db para evitar importaciones circulares
-from modelos import Carta
+from modelos import Cartas
 
 if __name__ == '__main__':
     app.run(debug=True)
