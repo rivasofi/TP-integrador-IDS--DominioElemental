@@ -324,6 +324,23 @@ h1 {
     opacity: 90%;
 }
 
+.controles_tutorial {
+    margin-top: 20px;
+}
+
+.controles_tutorial button {
+    background-color: #002347;
+    height: 50px;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
 .controles .ultima_slide {
     margin-top: 140px;
 }
