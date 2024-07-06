@@ -1,7 +1,7 @@
 import os
 from flask import Flask
 from app import db
-from modelos import Cartas  
+from modelos import Carta  
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://natashapetriw:geor@localhost:5432/intro'
@@ -38,9 +38,9 @@ def update_images():
                 img_frente_path = os.path.join(frente_dir, img_name)
                 img_dorso_path = os.path.join(dorso_dir, img_name)
                 
-                carta = Cartas.query.get(img_id)
+                carta = Carta.query.get(img_id)
                 if carta:
-                    # Verificar si las imágenes necesitan ser actualizadas
+                    
                     if (carta.imagen_frente != load_image_as_binary(img_frente_path)) or (carta.imagen_dorso != load_image_as_binary(img_dorso_path)):
                         carta.imagen_frente = load_image_as_binary(img_frente_path)
                         carta.imagen_dorso = load_image_as_binary(img_dorso_path)
