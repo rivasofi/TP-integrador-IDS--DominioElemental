@@ -34,11 +34,6 @@ h1 {
 
 }
 
-h1:hover {
-    transform: scale(1.1);
-    color: #003366;
-
-}
 
 header {
     background-color: #00000057;
@@ -100,7 +95,7 @@ body {
 }
 
 #contact h1 {
-    background: #4cb8b6;
+    background: #035eb9;
     font-family: Oswald, sans-serif;
     font-size: 1.75em;
     padding: 0.6em 0 0.6em 0.4em;
@@ -110,9 +105,9 @@ body {
 }
 
 .contactbutton {
-    background: #3D9493;
-    -webkit-box-shadow: 1px 1px 0 0 #5aa8a6e7, 2px 2px 0 0 #5aa8a6e7, 3px 3px 0 0 #5aa8a6e7;
-    box-shadow: 1px 1px 0 0 #5aa8a6e7, 2px 2px 0 0 #5aa8a6e7, 3px 3px 0 0 #5aa8a6e7;
+    background: #035eb9;
+    -webkit-box-shadow: 1px 1px 0 0 #035eb9, 2px 2px 0 0 #035eb9, 3px 3px 0 0 #035eb9;
+    box-shadow: 1px 1px 0 0 #035eb9, 2px 2px 0 0 #035eb9, 3px 3px 0 0 #035eb9;
     text-align: center;
     display: block;
     width: 100%;
@@ -123,8 +118,8 @@ body {
 }
 
 .contactbutton:hover {
-    -webkit-box-shadow: 1px 1px 0 0 #5aa8a6e7, 0px 0px 0 0 #5aa8a6e7, 0px 0px 0 0 #5aa8a6e7;
-    box-shadow: 1px 1px 0 0 #5aa8a6e7, 0px 0px 0 0 #5aa8a6e7, 0px 0px 0 0 #5aa8a6e7;
+    -webkit-box-shadow: 1px 1px 0 0 #035eb9, 0px 0px 0 0 #035eb9, 0px 0px 0 0 #035eb9; 
+    box-shadow: 1px 1px 0 0 #035eb9, 0px 0px 0 0 #035eb9, 0px 0px 0 0 #035eb9;
     margin-top: 22px;
     margin-left: 2px;
     margin-bottom: 0px;
@@ -240,7 +235,7 @@ body {
     left: 0;
     top: 0;
     height: 100%;
-    background: #4cb8b6;
+    background: #035eb9;
     color: white;
     font-family: Oswald, sans-serif;
     box-sizing: border-box;
@@ -296,13 +291,13 @@ body {
     margin-top: 1em;
     margin-bottom: 6px;
     cursor: pointer;
-    background: #4cb8b6;
+    background: #035eb9;
     color: white;
     font-family: Oswald, sans-serif;
     font-size: 1em;
     border: none;
-    -webkit-box-shadow: 1px 1px 0 0 #5aa8a6e7, 2px 2px 0 0 #5aa8a6e7, 3px 3px 0 0 #5aa8a6e7;
-    box-shadow: 1px 1px 0 0 #5aa8a6e7, 2px 2px 0 0 #5aa8a6e7, 3px 3px 0 0 #5aa8a6e7;
+    -webkit-box-shadow: 1px 1px 0 0 #035eb9, 2px 2px 0 0 #035eb9, 3px 3px 0 0 #035eb9;
+    box-shadow: 1px 1px 0 0 #035eb9, 2px 2px 0 0 #035eb9, 3px 3px 0 0 #035eb9;
     -webkit-appearance: none;
     -webkit-transition: all 250ms ease;
     -moz-transition: all 250ms ease;
@@ -313,8 +308,8 @@ body {
 }
 
 .submit_wrapper input:hover {
-    -webkit-box-shadow: 1px 1px 0 0 #5aa8a6e7, 0px 0px 0 0 #5aa8a6e7, 0px 0px 0 0 #5aa8a6e7;
-    box-shadow: 1px 1px 0 0 #5aa8a6e7, 0px 0px 0 0 #5aa8a6e7, 0px 0px 0 0 #5aa8a6e7;
+    -webkit-box-shadow: 1px 1px 0 0 #035eb9, 0px 0px 0 0 #035eb9, 0px 0px 0 0 #035eb9;
+    box-shadow: 1px 1px 0 0 #035eb9, 0px 0px 0 0 #035eb9, 0px 0px 0 0 #035eb9;
     margin-top: 22px;
     margin-left: 2px;
     margin-bottom: 0px;

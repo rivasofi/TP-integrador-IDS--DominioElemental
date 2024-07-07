@@ -19,18 +19,30 @@
         </nav>
     </header>
     <section id="contact">
-        <div class="sectionheader">	<h1>CONTÁCTANOS</h1></div>
+        <div class="sectionheader">
+            <h1>CONTÁCTANOS</h1>
+        </div>
         <article>
-        <p> Si tiene alguna pregunta, complete el siguiente formulario y nos comunicaremos con usted lo antes posible.</p>
-            
-                <label for="checkcontact" class="contactbutton"><div class="mail"></div></label><input id="checkcontact" type="checkbox">
-        
-                <form action="" method="post" class="contactform">
-                    <p class="input_wrapper"><input type="text" name="contact_nom" value=""  id ="contact_nom"><label for="contact_nom">NOMBRE</label></p>
-                    <p class="input_wrapper"><input type="text" name="contact_email" value=""  id ="contact_email"><label for="contact_email">EMAIL</label></p>
-                    <p class="input_wrapper"><input type="text" name="contact_sujet" value=""  id ="contact_sujet"><label for="contact_sujet">ASUNTO</label></p>
-                    <p class="textarea_wrapper"><textarea name="contact_message" id="contact_message"></textarea></p>
-                    <p class="submit_wrapper"><input type="submit" value="ENVIAR"></p>			
-                </form>
+            <p>Si tiene alguna pregunta, complete el siguiente formulario y nos comunicaremos con usted lo antes
+                posible.</p>
+            <label for="checkcontact" class="contactbutton">
+                <div class="mail"></div>
+            </label><input id="checkcontact" type="checkbox">
+            <form id="contact-form" class="contactform" action="/submit" method="post">
+                <p class="input_wrapper"><input type="text" name="contact_nom" id="contact_nom"><label
+                        for="contact_nom">NOMBRE</label></p>
+                <p class="input_wrapper"><input type="text" name="contact_email" id="contact_email"><label
+                        for="contact_email">EMAIL</label></p>
+                <p class="input_wrapper"><input type="text" name="contact_sujet" id="contact_sujet"><label
+                        for="contact_sujet">ASUNTO</label></p>
+                <p class="textarea_wrapper"><textarea name="contact_message" id="contact_message"></textarea></p>
+                <p class="submit_wrapper"><input type="submit" value="ENVIAR"></p>
+            </form>
         </article>
     </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
