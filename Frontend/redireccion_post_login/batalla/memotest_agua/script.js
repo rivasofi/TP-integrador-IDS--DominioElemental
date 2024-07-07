@@ -99,13 +99,14 @@ function mostrar_siguiente_pregunta(){
 }
 
 function mostrar_resultados_finales() {
-    document.getElementById("pregunta").textContent = "¡Juego terminado!";
+    document.getElementById("pregunta").textContent = "TERMINO EL JUEGO";
     document.getElementById("preguntas_form").style.display = "none";
     document.getElementById("resultados").style.display = "block";
     document.getElementById("contador_corr").textContent = contador_correctas;
     document.getElementById("contador_inc").textContent = contador_incorrectas;
     document.getElementById("contador_corr").className = "correcto";
     document.getElementById("contador_inc").className = "incorrecto";
+    sonido_fin();
 }
 
 document.getElementById("preguntas_form").addEventListener("submit", function(event) {
@@ -116,7 +117,7 @@ document.getElementById("preguntas_form").addEventListener("submit", function(ev
         verificar_respuesta(respuestaSeleccionada.value);
         respuestaSeleccionada.checked = false;
     } else {
-        alert("Por favor selecciona una respuesta.");
+        alert("No seas tramposo elegi una!");
     }
 });
 
@@ -127,3 +128,8 @@ function terminar_juego() {
 window.onload = function() {
     iniciar_juego();
 };
+
+function sonido_fin() {
+    const audio_exito = new Audio('../../../recursos_multimedia/sonido_compra.mp3');
+    audio_exito.play();
+}
