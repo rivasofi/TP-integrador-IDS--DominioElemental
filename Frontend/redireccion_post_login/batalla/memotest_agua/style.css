@@ -193,7 +193,7 @@ button:hover {
     100% { color: #0f5e9c; } 
 }
 
-#boton_temrinar {
+#boton_terminar {
     background-color: #FF5003;
     width:10%;
     height:60%;
@@ -206,6 +206,15 @@ button:hover {
 }
 
 
-#boton_temrinar:hover {
+#boton_terminar:hover {
     background-color: #FF7C47; 
+}
+.correcto {
+    color: green;
+    font-weight: bold;
+}
+
+.incorrecto {
+    color: red;
+    font-weight: bold;
 }

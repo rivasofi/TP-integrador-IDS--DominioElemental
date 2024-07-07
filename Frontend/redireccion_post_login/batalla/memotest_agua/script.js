@@ -2,7 +2,7 @@ function redireccionar(url) {
     window.location.href = url;
 }
 
-const preguntas_quiz = [
+const datos_quiz = [
     {
         pregunta: "¿Cuál es la etiqueta correcta para definir el título de una página web?",
         opciones: ["<title>", "<header>", "<h1>", "<meta>"],
@@ -14,7 +14,7 @@ const preguntas_quiz = [
         respuesta: "cm"
     },
     {
-        pregunta: " ¿Qué propiedad CSS se utiliza para definir el ancho de un elemento?",
+        pregunta: "¿Qué propiedad CSS se utiliza para definir el ancho de un elemento?",
         opciones: ["height", "width", "size", "depth"],
         respuesta: "width"
     },
@@ -49,3 +49,71 @@ const preguntas_quiz = [
         respuesta: "ls -a"
     },
 ];
+
+
+function iniciar_juego() {
+    rand_pregs();
+    mostrar_pregunta();
+}
+
+function mostrar_pregunta() {
+    const preguntaActual = datos_quiz[pregunta_actual];
+    const opciones = preguntaActual.opciones;
+
+    document.getElementById("pregunta").textContent = preguntaActual.pregunta;
+
+    for (let i = 0; i < opciones.length; i++) {
+        const opcionLabel = document.getElementById(`opcion_${i + 1}`);
+        opcionLabel.textContent = opciones[i];
+        opcionLabel.previousElementSibling.value = opciones[i];
+    }
+}
+
+function verificar_respuesta(respuestaSeleccionada) {
+    const preguntaActual = datos_quiz[pregunta_actual];
+    if (respuestaSeleccionada === preguntaActual.respuesta) {
+        contador_correctas++;
+    } else {
+        contador_incorrectas++;
+    }
+    mostrar_siguiente_pregunta();
+}
+
+function mostrar_siguiente_pregunta(){
+    pregunta_actual++;
+    if (pregunta_actual < datos_quiz.length){
+        mostrar_pregunta();
+    } else {
+        mostrar_resultados_finales();
+    }
+}
+
+function mostrar_resultados_finales() {
+    document.getElementById("pregunta").textContent = "¡Juego terminado!";
+    document.getElementById("preguntas_form").style.display = "none";
+    document.getElementById("resultados").style.display = "block";
+    document.getElementById("contador_corr").textContent = contador_correctas;
+    document.getElementById("contador_inc").textContent = contador_incorrectas;
+    document.getElementById("contador_corr").className = "correcto";
+    document.getElementById("contador_inc").className = "incorrecto";
+}
+
+document.getElementById("preguntas_form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const respuestaSeleccionada = document.querySelector('input[name="rta"]:checked');
+
+    if (respuestaSeleccionada) {
+        verificar_respuesta(respuestaSeleccionada.value);
+        respuestaSeleccionada.checked = false;
+    } else {
+        alert("Por favor selecciona una respuesta.");
+    }
+});
+
+function terminar_juego() {
+    mostrar_resultados_finales();
+}
+
+window.onload = function() {
+    iniciar_juego();
+};
