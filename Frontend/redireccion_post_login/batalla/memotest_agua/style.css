@@ -75,30 +75,16 @@ header {
 }
 
 body {
+    display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: url(../../../recursos_multimedia/imagenes_login/login_5.png) no-repeat;
+    background: url(../../../recursos_multimedia/fondo_preguntas.jpg) no-repeat;
     background-position: center;
     backdrop-filter: blur(5px);
     background-size: cover;
     padding-bottom: 80px;
     text-align: center;
-}
-#tabla{
-    height: 802px;
-    width:805px;
-    margin:0 auto;
-    display:flex;
-    flex-wrap: wrap;
-    background-color: red;
-    border-radius: 7px;
-}
-.cartas{
-    height:120px;
-    width:90px;
-    margin:2.5px
-
 }
 .container {
     position: absolute;
@@ -154,4 +140,55 @@ footer {
     color: aliceblue;
     background-color: #FF8E00;
     cursor: pointer;
+}
+.box {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h1 {
+    animation: cambio_color_quiz 5s infinite;
+    margin-top: 0;
+}
+
+form {
+    text-align: left;
+}
+
+button {
+    background-color: #003366;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #FF5003;
+}
+
+#resultados {
+    text-align: left;
+    margin-top: 20px;
+}
+
+#resultados p {
+    margin-bottom: 10px;
+}
+
+@keyframes cambio_color_quiz {
+    0% { color: #0f5e9c; }
+    25% { color: #2389da; } 
+    50% { color: #1ca3ec; } 
+    75% { color: #5abcd8; } 
+    100% { color: #0f5e9c; } 
 }

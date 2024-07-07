@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Batalla</title>
+    <title>Podras Responder Todas Bien?</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -17,7 +17,25 @@
 </header>
 
 <body>
-    
+    <div class="box">
+        <h1>Juego de Quiz</h1>
+        <div id="resultados">
+            <p>Respuestas Correctas: <span id="contador_corr">0</span></p>
+            <p>Respuestas Incorrectas: <span id="contador_inc">0</span></p>
+        </div>
+        <div id="pregunta"></div>
+        <form id="preguntas_form">
+            <input type="radio" name="rta" id="opcion1">
+            <label for="opcion1" id="opcion_1"></label><br>
+            <input type="radio" name="rta" id="opcion2">
+            <label for="opcion2" id="opcion_2"></label><br>
+            <input type="radio" name="rta" id="opcion3">
+            <label for="opcion3" id="opcion_3"></label><br>
+            <input type="radio" name="rta" id="opcion4">
+            <label for="opcion4" id="opcion_4"></label><br><br>
+            <button type="submit">Continuar</button>
+        </form>
+    </div>
 </body>
 <footer>
     <div class="footer-content">
