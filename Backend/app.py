@@ -121,3 +121,9 @@ def obtener_cartas():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+@app.route('/saldo')
+def mostrar_saldo():
+    usuario = Usuario.query.get(1)
+    saldo = usuario.plata
+    return render_template('index.html', saldo=saldo)
