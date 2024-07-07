@@ -105,7 +105,7 @@ h1 {
     font-size: 35px;
     animation: brillo_texto 2.5s infinite;
     animation-timing-function: ease-in-out;
-    text-align: left;
+    text-align: center;
     margin-top: 65px;
     margin-bottom: 20px;
 }
@@ -191,4 +191,21 @@ button:hover {
     50% { color: #1ca3ec; } 
     75% { color: #5abcd8; } 
     100% { color: #0f5e9c; } 
+}
+
+#boton_temrinar {
+    background-color: #FF5003;
+    width:10%;
+    height:60%;
+    color: white; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+
+#boton_temrinar:hover {
+    background-color: #FF7C47; 
 }

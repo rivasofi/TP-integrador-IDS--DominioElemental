@@ -19,7 +19,7 @@
 <body>
     <div class="box">
         <h1>Juego de Quiz</h1>
-        <div id="resultados">
+        <div id="resultados" style="display: none;">
             <p>Respuestas Correctas: <span id="contador_corr">0</span></p>
             <p>Respuestas Incorrectas: <span id="contador_inc">0</span></p>
         </div>
@@ -39,6 +39,8 @@
 </body>
 <footer>
     <div class="footer-content">
+        <button id="boton_temrinar" onclick="terminar_juego()">Terminar Juego</button>
+
         <button class="boton_volumen" onclick="mutear_audio()"><i class='bx bx-volume-full icon-volume'></i></button>
     </div>
 </footer>
