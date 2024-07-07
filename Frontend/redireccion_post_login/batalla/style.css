@@ -191,7 +191,7 @@ footer {
     opacity: 1;
 }
 .titulo_juego.juego_memotest {
-    animation: cambio_juego_agua s infinite;
+    animation: cambio_juego_agua 2s infinite;
     text-align: center;
 }
 
