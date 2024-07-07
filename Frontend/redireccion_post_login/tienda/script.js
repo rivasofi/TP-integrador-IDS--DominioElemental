@@ -89,10 +89,45 @@ function confirmar_compra(nombre_producto, precio) {
 }
 
 function realizar_compra() {
-    var mensaje_exito = document.getElementById('mensaje_exito');
-    mensaje_exito.style.display = 'block';
-    sonido_compra();
-    setTimeout(cerrar_compra, 800);
+    var mensajeConfirmacion = document.getElementById('mensaje_confirmar').textContent;
+    var nombreProducto = mensajeConfirmacion.split(' por ')[0].split('¿Estás seguro que deseas comprar ')[1].trim();
+
+    var precio = 15;
+
+    if (nombreProducto === 'Pack Aleatorio') {
+        precio = 10;
+    }
+
+    fetch('http://127.0.0.1:5000/comprar', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            nombre: nombreProducto,
+            precio: precio,
+        }),
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById('mensaje_exito').style.display = 'block';
+            document.getElementById('saldo-usuario').textContent = data.saldo;
+            sonido_compra();
+            setTimeout(cerrar_compra, 800);
+
+            if (data.mensaje.includes('Se te sumó')) {
+                alert(data.mensaje);
+            }            
+        })
+        .catch(error => {
+            console.error('Error al realizar la compra:', error);
+            alert('¡Saldo insuficiente!');
+        });
 }
 
 function cerrar_compra() {
