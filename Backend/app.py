@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, send_from_directory
+from flask import Flask, jsonify, send_from_directory, request
 from config import SQLALCHEMY_DATABASE_URI
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
@@ -28,6 +28,24 @@ def obtener_saldo():
     if usuario_demo:
         return jsonify({'saldo': usuario_demo.plata})
     return jsonify({'saldo': 0})
+
+@app.route('/submit', methods=['POST'])
+def submit():
+    name = request.form['contact_nom']
+    email = request.form['contact_email']
+    subject = request.form['contact_sujet']
+    message = request.form['contact_message']
+
+    output_file = os.path.join(os.path.dirname(__file__), 'datos_formulario.txt')
+
+    if not os.path.exists(output_file):
+        with open(output_file, 'w', encoding='utf-8') as f:
+            pass
+
+    with open(output_file, 'a', encoding='utf-8') as f:
+        f.write(f"Nombre: {name}\nEmail: {email}\nAsunto: {subject}\nMensaje: {message}\n{'-'*40}\n")
+
+    return '¡Datos guardados con éxito!'
 
 if __name__ == '__main__':
     
