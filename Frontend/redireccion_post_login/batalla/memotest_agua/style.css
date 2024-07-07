@@ -79,7 +79,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: url(../../../recursos_multimedia/fondo_preguntas.jpg) no-repeat;
+    background: url(../../../recursos_multimedia/27.png) no-repeat;
     background-position: center;
     backdrop-filter: blur(5px);
     background-size: cover;
@@ -217,4 +217,15 @@ button:hover {
 .incorrecto {
     color: red;
     font-weight: bold;
+}
+
+#pregunta {
+    animation: cambio_exito 5s infinite;
+
+}
+
+@keyframes cambio_exito {
+    0% { color: green;}
+    50% { color: greenyellow;} 
+    100% { color: green;} 
 }

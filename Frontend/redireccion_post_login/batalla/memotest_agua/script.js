@@ -99,7 +99,7 @@ function mostrar_siguiente_pregunta(){
 }
 
 function mostrar_resultados_finales() {
-    document.getElementById("pregunta").textContent = "TERMINO EL JUEGO";
+    document.getElementById("pregunta").textContent = "TERMINO EL JUEGO. FIJATE CUANTO ORO GANASTE YENDO A LA TIENDA!";
     document.getElementById("preguntas_form").style.display = "none";
     document.getElementById("resultados").style.display = "block";
     document.getElementById("contador_corr").textContent = contador_correctas;
