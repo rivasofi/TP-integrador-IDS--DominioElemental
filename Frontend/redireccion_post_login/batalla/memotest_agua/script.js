@@ -50,6 +50,16 @@ const datos_quiz = [
     },
 ];
 
+function rand_pregs() {
+    for (let i = datos_quiz.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [datos_quiz[i], datos_quiz[j]] = [datos_quiz[j], datos_quiz[i]];
+    }
+}
+
+let pregunta_actual = 0;
+let contador_correctas = 0;
+let contador_incorrectas = 0;
 
 function iniciar_juego() {
     rand_pregs();
