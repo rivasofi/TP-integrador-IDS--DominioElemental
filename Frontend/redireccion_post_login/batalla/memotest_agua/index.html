@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batalla</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<audio id="background-audio" src="../../recursos_multimedia/login-musica.mp3" autoplay loop></audio>
+
+<header>
+    <nav class="navegacion">
+        <button onclick="redireccionar('../index.html')">Salir</button>
+    </nav>
+</header>
+
+<body>
+    <h2>Errores: <span id="errores">0</span></h2>
+</body>
+<footer>
+    <div class="footer-content">
+        <button class="boton_volumen" onclick="mutear_audio()"><i class='bx bx-volume-full icon-volume'></i></button>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="../script.js"></script>
+
+</body>
+
+</html>
