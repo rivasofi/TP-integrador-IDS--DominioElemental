@@ -79,7 +79,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: url(../../recursos_multimedia/inventario_bg.png) no-repeat;
+    background: url(../../recursos_multimedia/fondo_batalla.png) no-repeat;
     background-position: center;
     backdrop-filter: blur(5px);
     background-size: cover;
