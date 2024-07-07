@@ -28,7 +28,7 @@ header {
     width: 600%;
 }
 
-.navegacion a {
+.navegacion a:not(.batalla_efecto a) {
     font-size: 18px;
     text-decoration: none;
     color: white;
@@ -64,6 +64,20 @@ header {
     box-shadow: 0 5px 20px rgba(182, 166, 92, 0.4);
 }
 
+.batalla_efecto a {
+    position: relative;
+    font-size: 18px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    margin-right: 10px;
+    animation: cambio_color 3s infinite;
+    margin-left: 135px;
+    margin-right: 135px;
+    transition: 0.5s;
+}
+
 body {
     display: flex;
     align-items: center;
@@ -88,6 +102,32 @@ footer {
     background-color: #00000057;
     text-align: right;
     padding: 10px 20px;
+}
+
+@keyframes cambio_color {
+    0% {
+        color: #fc910e;
+        text-shadow: 0 0 10px #fc910e;
+        transform: scale(1);
+    }
+
+    50% {
+        color: #ff7300;
+        text-shadow: 0 0 10px #ff7300;
+        transform: scale(1.2);
+    }
+
+    75% {
+        color: #ffba66;
+        text-shadow: 0 0 10px #ffba66;
+        transform: scale(1.1)
+    }
+
+    100% {
+        color: #fc910e;
+        text-shadow: 0 0 10px #fc910e;
+        transform: scale(1)
+    }
 }
 
 .boton_volumen {
