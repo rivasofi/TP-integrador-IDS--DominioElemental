@@ -25,19 +25,35 @@ function redireccionar(url) {
     window.location.href = url;
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+function obtenerSaldo() {
+    fetch('http://127.0.0.1:5000/saldo')
+        .then(response => response.json())
+        .then(data => {
+            const saldoUsuario = data.saldo;
+            const saldoElemento = document.getElementById('saldo-usuario');
+            if (saldoElemento) {
+                saldoElemento.textContent = saldoUsuario;
+            }
+        })
+        .catch(error => console.error('Error al obtener el saldo:', error));
+}
+
+document.addEventListener('DOMContentLoaded', obtenerSaldo);
+
+document.addEventListener("DOMContentLoaded", function () {
     const items = document.querySelectorAll('.item');
 
     const hoverSound = document.getElementById('hover-sound');
-    
+
     items.forEach(item => {
         item.addEventListener('mouseenter', () => {
             hoverSound.currentTime = 0;
             hoverSound.play();
         });
     });
-    
+
 });
+
 document.addEventListener('DOMContentLoaded', function () {
     const elem_grande = document.querySelector('.elem_grande img');
     const imagenes = [
@@ -76,7 +92,7 @@ function realizar_compra() {
     var mensaje_exito = document.getElementById('mensaje_exito');
     mensaje_exito.style.display = 'block';
     sonido_compra();
-    setTimeout(cerrar_compra, 800); 
+    setTimeout(cerrar_compra, 800);
 }
 
 function cerrar_compra() {
