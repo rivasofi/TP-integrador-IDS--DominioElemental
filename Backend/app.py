@@ -1,55 +1,33 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_from_directory
 from config import SQLALCHEMY_DATABASE_URI
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
+from flask_cors import CORS
+from models import db, Carta, Usuario, CartasUsuario
+import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+db.init_app(app)
 
-class Carta(db.Model):
-    __tablename__ = 'carta'
-    id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(100), nullable=False)
-    elemento = db.Column(db.String(50), nullable=False)
-    poder = db.Column(db.Integer, nullable=False)
+CORS(app)
 
-class Usuario(db.Model):
-    __tablename__ = 'usuarios'
-    id = db.Column(db.Integer, primary_key=True)
-    nombre = db.Column(db.String(255), nullable=False)
-    plata = db.Column(db.Integer, nullable=False, default=30)
-    
-class CartasUsuario(db.Model):
-    __tablename__ = 'cartas_usuario'
-    id = db.Column(db.Integer, primary_key=True)
-    usuario_id = db.Column(db.Integer, db.ForeignKey('usuarios.id'), nullable=False)
-    carta_id = db.Column(db.Integer, db.ForeignKey('carta.id'), nullable=False)
-    cantidad = db.Column(db.Integer, default=1)
+@app.route('/')
+def index():
+    return send_from_directory('Frontend', 'index.html')
 
-    usuario = db.relationship('Usuario', backref=db.backref('cartas_usuario', cascade='all, delete-orphan'))
-    carta = db.relationship('Carta')
-
-@app.route('/cartas')
-def obtener_cartas():
-    cartas = Carta.query.all()
-    resultado = []
-    for carta in cartas:
-        carta_dict = {
-            'id': carta.id,
-            'nombre': carta.nombre,
-            'elemento': carta.elemento,
-            'poder': carta.poder
-        }
-        resultado.append(carta_dict)
-    return {'cartas': resultado}
+@app.route('/<path:path>')
+def static_files(path):
+    return send_from_directory('Frontend', path)
 
 @app.route('/saldo')
-def mostrar_saldo():
-    usuario = Usuario.query.get(1)
-    saldo = usuario.plata
-    return jsonify(saldo=saldo)
+def obtener_saldo():
+    from models import Usuario
+    usuario_demo = Usuario.query.filter_by(nombre='Demo').first()
+    if usuario_demo:
+        return jsonify({'saldo': usuario_demo.plata})
+    return jsonify({'saldo': 0})
 
 if __name__ == '__main__':
     
