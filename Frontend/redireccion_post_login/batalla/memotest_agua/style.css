@@ -75,7 +75,6 @@ header {
 }
 
 body {
-    display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
@@ -84,8 +83,23 @@ body {
     backdrop-filter: blur(5px);
     background-size: cover;
     padding-bottom: 80px;
+    text-align: center;
 }
+#tabla{
+    height: 802px;
+    width:805px;
+    margin:0 auto;
+    display:flex;
+    flex-wrap: wrap;
+    background-color: red;
+    border-radius: 7px;
+}
+.cartas{
+    height:120px;
+    width:90px;
+    margin:2.5px
 
+}
 .container {
     position: absolute;
     top: 45px;
