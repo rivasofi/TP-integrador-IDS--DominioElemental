@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, send_from_directory, request, flash
+from flask import Flask, jsonify, send_from_directory, request
 from config import SQLALCHEMY_DATABASE_URI
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
