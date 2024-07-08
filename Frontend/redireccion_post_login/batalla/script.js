@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
             hover_sound.play();
 
             const img_element = item.querySelector('img');
-            const titulo_juego = item.querySelector('.titulo_juego').textContent.trim();
+            const titulo_juego = img_element.alt.trim();
             const imagenes = obtener_imagenes(titulo_juego);
             if (imagenes.length > 0) {
                 img_element.src = imagenes[1];
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         item.addEventListener('mouseleave', () => {
             const img_element = item.querySelector('img');
-            const titulo_juego = item.querySelector('.titulo_juego').textContent.trim();
+            const titulo_juego = img_element.alt.trim();
             const imagenes = obtener_imagenes(titulo_juego);
 
             if (imagenes.length > 0) {
@@ -27,21 +27,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function obtener_imagenes(titulo_juego) {
         const imagenes = {
-            "PROBA TU CONOCIMIENTO!": [
-                "../../recursos_multimedia/30.png",
-                "../../recursos_multimedia/27.png"
+            "juego_preguntas": [
+                "../../recursos_multimedia/banner2_agua.png",
+                "../../recursos_multimedia/banner_agua.png"
             ],
-            "DINO GAME": [
-                "../../recursos_multimedia/imagenes_login/login_3.png",
-                "../../recursos_multimedia/imagenes_login/login_4.png"
+            "juego_correr": [
+                "../../recursos_multimedia/banner_dino2.png",
+                "../../recursos_multimedia/banner_dino.png"
             ],
-            "TATETI HELADO": [
-                "../../recursos_multimedia/imagenes_login/login_6.png",
-                "../../recursos_multimedia/imagenes_login/login_5.png"
+            "juego_tateti": [
+                "../../recursos_multimedia/banner_2tateti.png",
+                "../../recursos_multimedia/banner_tateti.png"
             ],
-            "TE ACORDAS DE TODOS?": [
-                "../../recursos_multimedia/imagenes_login/login_7.png",
-                "../../recursos_multimedia/imagenes_login/login_8.png"
+            "juego_memoria": [
+                "../../recursos_multimedia/banner2_memotest.png",
+                "../../recursos_multimedia/banner_memotest.png"
             ]
         };
 
