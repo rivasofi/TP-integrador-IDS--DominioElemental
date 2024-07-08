@@ -75,7 +75,7 @@ function check_score() {
             info_display.textContent = "Gano Fuego! Vuelve a la tienda a ver tu saldo actual.";
             sumar_saldo();
             disable_board();
-            show_notification("¡Felicitaciones! Has ganado 2 monedas");
+            show_notification("¡Felicitaciones! Has ganado 2 monedas 🎉🎉");
             
         }
     });

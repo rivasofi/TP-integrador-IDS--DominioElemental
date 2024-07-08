@@ -103,7 +103,7 @@ body {
 }
 
 .notification {
-    background-color: #4CAF50;
+    background-color: rgb(77, 203, 238);
     color: white;
     padding: 15px;
     position: fixed;
@@ -112,4 +112,6 @@ body {
     z-index: 1000;
     border-radius: 5px;
     display: none;
+    font-family: 'Open Sans', sans-serif;
+
 }
