@@ -25,20 +25,20 @@ function redireccionar(url) {
     window.location.href = url;
 }
 
-function obtenerSaldo() {
+function obtener_saldo() {
     fetch('http://127.0.0.1:5000/saldo')
         .then(response => response.json())
         .then(data => {
-            const saldoUsuario = data.saldo;
-            const saldoElemento = document.getElementById('saldo-usuario');
-            if (saldoElemento) {
-                saldoElemento.textContent = saldoUsuario;
+            const saldo_usuario = data.saldo;
+            const saldo_elemento = document.getElementById('saldo-usuario');
+            if (saldo_elemento) {
+                saldo_elemento.textContent = saldo_usuario;
             }
         })
         .catch(error => console.error('Error al obtener el saldo:', error));
 }
 
-document.addEventListener('DOMContentLoaded', obtenerSaldo);
+document.addEventListener('DOMContentLoaded', obtener_saldo);
 
 document.addEventListener("DOMContentLoaded", function () {
     const items = document.querySelectorAll('.item');

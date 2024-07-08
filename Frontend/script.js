@@ -104,6 +104,6 @@ function mutear_audio() {
 function precargar_imagenes(imagenes) {
     imagenes.forEach(function (imagen) {
         var img = new Image();
-        img.src = imagen.replace('url(', '').replace(')', '').replace(/\"/gi, ""); //"limpia" la url para que reciba una válida.
+        img.src = imagen.replace('url(', '').replace(')', '').replace(/\"/gi, "");
     });
 }

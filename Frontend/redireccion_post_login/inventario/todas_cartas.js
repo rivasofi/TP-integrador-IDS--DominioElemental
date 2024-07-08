@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
             { numero: 35, nombre: 'Cady Heron', descripcion: 'El límite no existe' },
             { numero: 39, nombre: 'Elle Woods', descripcion: 'What, like its hard?' },
             { numero: 41, nombre: 'Thranduil', descripcion: 'Con el tiempo, todas las cosas inmundas surgen' },
-            { numero: 60, nombre: 'Laika', descripcion: '' },
+            { numero: 24, nombre: 'Laika', descripcion: '' },
             { numero: 63, nombre: 'Appa', descripcion: '¡Yip yip!' },
         ],
         'cartas_tierra': [
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             { numero: 52, nombre: 'Toph', descripcion: 'Ya he visto suficiente de Ba Sing Sei. ¡Y ni siquiera puedo ver!' },
             { numero: 58, nombre: 'Steve', descripcion: 'Si hay que ser minero' },
             { numero: 59, nombre: 'Creeper', descripcion: 'tsss' },
-            { numero: 61, nombre: 'Dolly', descripcion: '' },
+            { numero: 25, nombre: 'Dolly', descripcion: '' },
             { numero: 62, nombre: 'Aang', descripcion: 'El pasado puede ser un gran maestro' },
             { numero: 64, nombre: 'Momo', descripcion: 'chirp chirp' },
         ],
