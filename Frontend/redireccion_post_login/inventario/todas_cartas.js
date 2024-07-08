@@ -1,9 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
     const carpetas = {
-        'cartas_fuego': 25,
-        'cartas_nieve': 27,
-        'cartas_tierra': 27,
-        'cartas_agua': 35
+        'cartas_fuego': [
+            { numero: 4, nombre: 'SZA' },
+            { numero: 5, nombre: '' },
+        ],
+        'cartas_nieve': [
+            { numero: 2, nombre: 'Nombre Personalizado' },
+            { numero: 3, nombre: 'Nombre Personalizado' },
+                ],
+        'cartas_tierra': [
+            { numero: 7, nombre: 'Nombre Personalizado' },
+            { numero: 12, nombre: 'Nombre Personalizado' },
+        ],
+        'cartas_agua': [
+            { numero: 1, nombre: 'Nombre Personalizado' },
+            { numero: 11, nombre: 'Nombre Personalizado' },
+
+        ]
     };
 
     const base_path = '../../recursos_multimedia/Cartas/';
@@ -14,27 +27,49 @@ document.addEventListener('DOMContentLoaded', function () {
     function cargar_imagenes(carpeta_actual) {
         grid_img.innerHTML = '';
 
-        const cant_imagenes = carpetas[carpeta_actual];
+        const cartas = carpetas[carpeta_actual];
         const boton_anterior = document.getElementById('boton_anterior');
         const boton_siguiente = document.getElementById('boton_siguiente');
 
-        for (let i = 1; i <= cant_imagenes; i += 2) {
+        cartas.forEach((carta) => {
+            const contenedor = document.createElement('div');
+            contenedor.classList.add('carta');
+
             const img = document.createElement('img');
-            img.src = `${base_path}${carpeta_actual}/frente/${i}.png`;
-            img.alt = `${carpeta_actual} ${i}`;
+            img.src = `${base_path}${carpeta_actual}/frente/${carta.numero}.png`;
+            img.alt = `${carpeta_actual} ${carta.numero}`;
 
-
-            if (lugar_actual === 3) {
-                img.classList.add('imagen-chica');
-                boton_anterior.classList.add('ultima_slide');
-                boton_siguiente.classList.add('ultima_slide');
-            } else {
-                img.classList.remove('imagen-chica');
-                boton_anterior.classList.remove('ultima_slide');
-                boton_siguiente.classList.remove('ultima_slide');
+            const textoHover = document.createElement('div');
+            textoHover.classList.add('texto-hover');
+            textoHover.innerHTML = `<span>${carta.nombre}</span><br><p>Descripción de la carta ${carta.numero}</p>`;
+            switch (carpeta_actual) {
+                case 'cartas_fuego':
+                    textoHover.classList.add('cambio-color-fuego');
+                    break;
+                case 'cartas_nieve':
+                    textoHover.classList.add('cambio-color-hielo');
+                    break;
+                case 'cartas_tierra':
+                    textoHover.classList.add('cambio-color-tierra');
+                    break;
+                case 'cartas_agua':
+                    textoHover.classList.add('cambio-color-agua');
+                    break;
+                default:
+                    textoHover.classList.add('cambio-color-default');
             }
 
-            grid_img.appendChild(img);
+            contenedor.appendChild(img);
+            contenedor.appendChild(textoHover);
+            grid_img.appendChild(contenedor);
+        });
+
+        if (lugar_actual === 3) {
+            boton_anterior.classList.add('ultima_slide');
+            boton_siguiente.classList.add('ultima_slide');
+        } else {
+            boton_anterior.classList.remove('ultima_slide');
+            boton_siguiente.classList.remove('ultima_slide');
         }
     }
 
@@ -50,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const carpeta_actual = carpetas_keys[lugar_actual];
         cargar_imagenes(carpeta_actual);
-
     }
 
     cargar_imagenes(Object.keys(carpetas)[0]);
@@ -62,5 +96,4 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('boton_siguiente').addEventListener('click', function () {
         cambiar_lugar(1);
     });
-
 });
