@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'url(recursos_multimedia/imagenes_login/login_12.png)',
     ];
 
-    precargarImagenes(backgrounds);
+    precargar_imagenes(backgrounds);
 
     function randomizar_fondos(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -44,42 +44,42 @@ document.body.addEventListener('click', function () {
 });
 
 document.getElementById('form-open').addEventListener('click', function () {
-    var loginForm = document.querySelector('.login_form');
+    var formulario_login = document.querySelector('.login_form');
 
-    if (!loginForm.classList.contains('show')) {
-        loginForm.classList.remove('inactive');
-        loginForm.classList.add('show');
-        enable_form_elements();
+    if (!formulario_login.classList.contains('show')) {
+        formulario_login.classList.remove('inactive');
+        formulario_login.classList.add('show');
+        habilitar_elementos_formulario();
     } else {
-        loginForm.classList.remove('show');
-        loginForm.classList.add('inactive');
+        formulario_login.classList.remove('show');
+        formulario_login.classList.add('inactive');
     }
 });
 
 document.getElementById('cerrar_login').addEventListener('click', function () {
-    var loginForm = document.querySelector('.login_form');
+    var formulario_login = document.querySelector('.login_form');
 
-    loginForm.classList.remove('show');
-    loginForm.classList.add('inactive');
+    formulario_login.classList.remove('show');
+    formulario_login.classList.add('inactive');
 });
 
 document.getElementById('toggle_contrasena').addEventListener('click', function () {
-    var passwordField = document.getElementById('passwordField');
-    if (passwordField.type === "password") {
-        passwordField.type = "text";
+    var campo_contrasena = document.getElementById('passwordField');
+    if (campo_contrasena.type === "password") {
+        campo_contrasena.type = "text";
     } else {
-        passwordField.type = "password";
+        campo_contrasena.type = "password";
     }
 });
 
-function enable_form_elements() {
+function habilitar_elementos_formulario() {
     var inputs = document.querySelectorAll('.login_form input');
-    var buttons = document.querySelectorAll('.login_form button');
-    var links = document.querySelectorAll('.login_form a');
+    var botones = document.querySelectorAll('.login_form button');
+    var enlaces = document.querySelectorAll('.login_form a');
 
     inputs.forEach(input => input.disabled = false);
-    buttons.forEach(button => button.disabled = false);
-    links.forEach(link => link.style.pointerEvents = 'auto');
+    botones.forEach(button => button.disabled = false);
+    enlaces.forEach(enlace => enlace.style.pointerEvents = 'auto');
 }
 
 function reproducir_audio() {
@@ -101,7 +101,7 @@ function mutear_audio() {
     }
 }
 
-function precargarImagenes(imagenes) {
+function precargar_imagenes(imagenes) {
     imagenes.forEach(function (imagen) {
         var img = new Image();
         img.src = imagen.replace('url(', '').replace(')', '').replace(/\"/gi, ""); //"limpia" la url para que reciba una válida.

@@ -1,5 +1,5 @@
 body{
-    background: url(/Users/natasha/web-intro/Frontend/recursos_multimedia/fondo_memoria.jpeg) no-repeat center center fixed; 
+    background: url(../../../recursos_multimedia/fondo_memoria.jpeg) no-repeat center center fixed; 
     background-size: cover; 
     backdrop-filter: blur(5px);
     font-family: sans-serif;

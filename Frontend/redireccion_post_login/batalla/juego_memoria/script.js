@@ -73,6 +73,7 @@ function destapar(id){
             tarjetasDestapadas = 0;
             
             aciertos++; 
+            sumar_saldo();
             mostrarAciertos.innerHTML = `Aciertos: ${aciertos}`; 
 
             if(aciertos == 8){
@@ -80,8 +81,14 @@ function destapar(id){
                 mostrarAciertos.innerHTML =`Aciertos: ${aciertos} 😎 `;
                 mostrarMovimientos.innerHTML = `Movimientos: ${movimientos} 🙌🏼`;
                 mostrarTiempo.innerHTML =  `Fantastico! 🎉 Solo tardaste: ${timerInicial - timer} segundos`;
-                alert("¡Felicitaciones! Has ganado 5 monedas 🎉💰");
+                alert("¡Felicitaciones! Has ganado $8 monedas 🎉💰");
 
+                fetch('/sumar_saldo_juego', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
 
             }
 
@@ -101,3 +108,43 @@ function destapar(id){
 
 }
 
+function sumar_saldo() {
+    fetch('http://127.0.0.1:5000/sumar_saldo', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({})
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        const saldo_usuario = document.getElementById('saldo-usuario');
+        if (saldo_usuario) {
+            saldo_usuario.textContent = data.saldo;
+            console.log('Saldo actualizado:', data.saldo);
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', obtener_saldo);
+
+function obtener_saldo() {
+    fetch('/saldo')
+        .then(response => response.json())
+        .then(data => {
+            const saldo_usuario = data.saldo;
+            actualizar_saldo_en_interfaz(saldo_usuario);
+        });
+}
+
+function actualizar_saldo_en_interfaz(saldo) {
+    const saldo_elemento = document.getElementById('saldo-usuario');
+    if (saldo_elemento) {
+        saldo_elemento.textContent = saldo;
+    }
+}

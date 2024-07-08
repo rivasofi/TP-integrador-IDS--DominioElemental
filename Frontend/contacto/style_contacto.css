@@ -118,7 +118,7 @@ body {
 }
 
 .contactbutton:hover {
-    -webkit-box-shadow: 1px 1px 0 0 #035eb9, 0px 0px 0 0 #035eb9, 0px 0px 0 0 #035eb9; 
+    -webkit-box-shadow: 1px 1px 0 0 #035eb9, 0px 0px 0 0 #035eb9, 0px 0px 0 0 #035eb9;
     box-shadow: 1px 1px 0 0 #035eb9, 0px 0px 0 0 #035eb9, 0px 0px 0 0 #035eb9;
     margin-top: 22px;
     margin-left: 2px;
