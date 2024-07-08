@@ -1,9 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
     const carpetas = {
-        'cartas_fuego': [4, 5, 6, 8, 9, 14, 18, 30, 36, 43, 47, 48, 57],
-        'cartas_nieve': [2, 3, 10, 16, 17, 19, 21, 26, 33, 35, 39, 41, 60, 63],
-        'cartas_tierra': [7, 12, 15, 28, 29, 44, 45, 51, 52, 58, 59, 61, 62, 64],
-        'cartas_agua': [1, 11, 13, 20, 22, 23, 27, 31, 32, 34, 37, 38, 40, 42, 49, 50, 54, 55]
+        'cartas_fuego': [
+            { numero: 4, nombre: 'SZA' },
+            { numero: 5, nombre: '' },
+        ],
+        'cartas_nieve': [
+            { numero: 2, nombre: 'Nombre Personalizado' },
+            { numero: 3, nombre: 'Nombre Personalizado' },
+                ],
+        'cartas_tierra': [
+            { numero: 7, nombre: 'Nombre Personalizado' },
+            { numero: 12, nombre: 'Nombre Personalizado' },
+        ],
+        'cartas_agua': [
+            { numero: 1, nombre: 'Nombre Personalizado' },
+            { numero: 11, nombre: 'Nombre Personalizado' },
+
+        ]
     };
 
     const base_path = '../../recursos_multimedia/Cartas/';
@@ -18,23 +31,46 @@ document.addEventListener('DOMContentLoaded', function () {
         const boton_anterior = document.getElementById('boton_anterior');
         const boton_siguiente = document.getElementById('boton_siguiente');
 
-        cartas.forEach((numero_carta, index) => {
-            const img = document.createElement('img');
-            img.src = `${base_path}${carpeta_actual}/frente/${numero_carta}.png`;
-            img.alt = `${carpeta_actual} ${numero_carta}`;
+        cartas.forEach((carta) => {
+            const contenedor = document.createElement('div');
+            contenedor.classList.add('carta');
 
-            if (lugar_actual === 3) {
-                img.classList.add('imagen-chica');
-                boton_anterior.classList.add('ultima_slide');
-                boton_siguiente.classList.add('ultima_slide');
-            } else {
-                img.classList.remove('imagen-chica');
-                boton_anterior.classList.remove('ultima_slide');
-                boton_siguiente.classList.remove('ultima_slide');
+            const img = document.createElement('img');
+            img.src = `${base_path}${carpeta_actual}/frente/${carta.numero}.png`;
+            img.alt = `${carpeta_actual} ${carta.numero}`;
+
+            const textoHover = document.createElement('div');
+            textoHover.classList.add('texto-hover');
+            textoHover.innerHTML = `<span>${carta.nombre}</span><br><p>Descripción de la carta ${carta.numero}</p>`;
+            switch (carpeta_actual) {
+                case 'cartas_fuego':
+                    textoHover.classList.add('cambio-color-fuego');
+                    break;
+                case 'cartas_nieve':
+                    textoHover.classList.add('cambio-color-hielo');
+                    break;
+                case 'cartas_tierra':
+                    textoHover.classList.add('cambio-color-tierra');
+                    break;
+                case 'cartas_agua':
+                    textoHover.classList.add('cambio-color-agua');
+                    break;
+                default:
+                    textoHover.classList.add('cambio-color-default');
             }
 
-            grid_img.appendChild(img);
+            contenedor.appendChild(img);
+            contenedor.appendChild(textoHover);
+            grid_img.appendChild(contenedor);
         });
+
+        if (lugar_actual === 3) {
+            boton_anterior.classList.add('ultima_slide');
+            boton_siguiente.classList.add('ultima_slide');
+        } else {
+            boton_anterior.classList.remove('ultima_slide');
+            boton_siguiente.classList.remove('ultima_slide');
+        }
     }
 
     function cambiar_lugar(direccion) {
