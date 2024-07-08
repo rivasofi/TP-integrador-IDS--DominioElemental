@@ -83,12 +83,12 @@ function verificar_respuesta(respuestaSeleccionada) {
     const preguntaActual = datos_quiz[pregunta_actual];
     if (respuestaSeleccionada === preguntaActual.respuesta) {
         contador_correctas++;
+        sumar_saldo();
     } else {
         contador_incorrectas++;
     }
     mostrar_siguiente_pregunta();
 }
-
 function mostrar_siguiente_pregunta(){
     pregunta_actual++;
     if (pregunta_actual < datos_quiz.length){
@@ -132,4 +132,41 @@ window.onload = function() {
 function sonido_fin() {
     const audio_exito = new Audio('../../../recursos_multimedia/sonido_compra.mp3');
     audio_exito.play();
+}
+
+function sumar_saldo() {
+    fetch('http://127.0.0.1:5000/sumar_saldo', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({})
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+
+        document.getElementById('saldo-usuario').textContent = data.saldo;
+        console.log('Saldo actualizado:', data.saldo);
+    })
+}
+document.addEventListener('DOMContentLoaded', obtenerSaldo);
+
+function obtenerSaldo() {
+    fetch('/saldo')
+        .then(response => response.json())
+        .then(data => {
+            const saldoUsuario = data.saldo;
+            actualizarSaldoEnInterfaz(saldoUsuario);
+        })
+}
+function actualizarSaldoEnInterfaz(saldo) {
+    const saldoElemento = document.getElementById('saldo-usuario');
+    if (saldoElemento) {
+        saldoElemento.textContent = saldo;
+    }
 }
