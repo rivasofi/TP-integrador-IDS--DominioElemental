@@ -448,7 +448,7 @@ footer {
     opacity: 0;
     transform: translateY(0);
     transition: opacity 0.3s, transform 0.3s;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -463,7 +463,7 @@ footer {
 
 .texto-hover p {
     font-size: 16px;
-    margin-top: 8px;
+    margin-top: 0px;
     text-align: center;
 }
 
@@ -518,35 +518,91 @@ footer {
 }
 
 @keyframes cambio_color_fuego {
-    0% { color: #ff0000; }
-    25% { color: #ff5a00; }
-    50% { color: #ff9a00; }
-    75% { color: #ffce00; }
-    100% { color: #ff0000; }
+    0% {
+        color: #ff0000;
+    }
+
+    25% {
+        color: #ff5a00;
+    }
+
+    50% {
+        color: #ff9a00;
+    }
+
+    75% {
+        color: #ffce00;
+    }
+
+    100% {
+        color: #ff0000;
+    }
 }
 
 @keyframes cambio_color_hielo {
-    0% { color: #ffffff; }
-    25% { color: #b9e8ea; }
-    50% { color: #86d6d8; }
-    75% { color: #3fd0d4; }
-    100% { color: #ffffff; }
+    0% {
+        color: #ffffff;
+    }
+
+    25% {
+        color: #b9e8ea;
+    }
+
+    50% {
+        color: #86d6d8;
+    }
+
+    75% {
+        color: #3fd0d4;
+    }
+
+    100% {
+        color: #ffffff;
+    }
 }
 
 @keyframes cambio_color_tierra {
-    0% { color: #b69f66; }
-    25% { color: #6b5428; }
-    50% { color: #6b5428; }
-    75% { color: #76552b; }
-    100% { color: #b69f66; }
+    0% {
+        color: #b69f66;
+    }
+
+    25% {
+        color: #6b5428;
+    }
+
+    50% {
+        color: #6b5428;
+    }
+
+    75% {
+        color: #76552b;
+    }
+
+    100% {
+        color: #b69f66;
+    }
 }
 
 @keyframes cambio_color_agua {
-    0% { color: #0f5e9c; }
-    25% { color: #2389da; }
-    50% { color: #1ca3ec; }
-    75% { color: #5abcd8; }
-    100% { color: #0f5e9c; }
+    0% {
+        color: #0f5e9c;
+    }
+
+    25% {
+        color: #2389da;
+    }
+
+    50% {
+        color: #1ca3ec;
+    }
+
+    75% {
+        color: #5abcd8;
+    }
+
+    100% {
+        color: #0f5e9c;
+    }
 }
 
 .carta:hover img {
