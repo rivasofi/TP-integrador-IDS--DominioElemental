@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const perfiles = document.querySelectorAll('.perfil');
 
     const hoverSound = new Audio('../recursos_multimedia/hoover-about_us.mp3');
