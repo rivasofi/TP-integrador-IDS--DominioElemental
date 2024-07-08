@@ -1,71 +1,71 @@
 document.addEventListener('DOMContentLoaded', function () {
     const carpetas = {
         'cartas_fuego': [
-            { numero: 4, nombre: 'SZA', descripcion: '' },
+            { numero: 4, nombre: 'SZA', descripcion: 'Amo mi propio caos' },
             { numero: 5, nombre: 'Sabrina Carpenter', descripcion: 'Polly Pocket' },
-            { numero: 6, nombre: 'Fito Paez', descripcion: '' },
-            { numero: 8, nombre: 'Melanie Martinez', descripcion: '' },
-            { numero: 9, nombre: 'Mariah Carey', descripcion: '' },
-            { numero: 14, nombre: 'ITZY', descripcion: 'el mejor GG' },
-            { numero: 18, nombre: 'Milky Dolly', descripcion: 'no vendan mi pais. me vendo yo' },
+            { numero: 6, nombre: 'Fito Paez', descripcion: 'Ellos solos pueden más que el amor' },
+            { numero: 8, nombre: 'Melanie Martinez', descripcion: 'Crybaby' },
+            { numero: 9, nombre: 'Mariah Carey', descripcion: 'All I want for christmas is you' },
+            { numero: 14, nombre: 'ITZY', descripcion: 'El mejor GG' },
+            { numero: 18, nombre: 'Milky Dolly', descripcion: 'No vendan mi pais, me vendo yo' },
             { numero: 30, nombre: 'Firefox', descripcion: '' },
-            { numero: 36, nombre: 'Gretchen Wieners', descripcion: '"Thats why her hair is so big. Its secrets."' },
-            { numero: 43, nombre: 'Gandalf', descripcion: '' },
-            { numero: 47, nombre: 'Zuko', descripcion: '' },
-            { numero: 48, nombre: 'Azula', descripcion: '' },
-            { numero: 57, nombre: 'Iroh', descripcion: '' },
+            { numero: 36, nombre: 'Gretchen Wieners', descripcion: '"Thats why her hair is so big. Its full of secrets."' },
+            { numero: 43, nombre: 'Gandalf', descripcion: 'A menudo el odio se lastima a sí mismo' },
+            { numero: 47, nombre: 'Zuko', descripcion: 'En la oscuridad, la esperanza es algo que te das a ti mismo' },
+            { numero: 48, nombre: 'Azula', descripcion: 'Mi propia madre pensó que yo era un monstruo' },
+            { numero: 57, nombre: 'Iroh', descripcion: 'La vida sucede dondequiera que estés, ya sea que lo logres o no' },
         ],
         'cartas_nieve': [
-            { numero: 2, nombre: 'Lady Gaga', descripcion: '' },
-            { numero: 3, nombre: 'Leo Mattioli', descripcion: '' },
+            { numero: 2, nombre: 'Lady Gaga', descripcion: 'Born this way' },
+            { numero: 3, nombre: 'Leo Mattioli', descripcion: 'Lloraras mas de diez veces por amor' },
             { numero: 10, nombre: 'Duki', descripcion: 'toy que goteo' },
-            { numero: 16, nombre: 'Enano Bostero', descripcion: 'estado: haciendo un asado' },
+            { numero: 16, nombre: 'Enano Bostero', descripcion: '¿Le falta fuego?' },
             { numero: 17, nombre: 'Ricardo Fort', descripcion: 'Yo no manejo el rating. Yo manejo un Rolls-Royce' },
             { numero: 19, nombre: 'Anto Pane', descripcion: 'NOOOO YO SOY ARIANA GRANDE' },
-            { numero: 21, nombre: 'Mirtha Legrand', descripcion: 'por que mataste a tus padres?' },
+            { numero: 21, nombre: 'Mirtha Legrand', descripcion: '¿Por qué mataste a tus padres?' },
             { numero: 26, nombre: 'Linux', descripcion: 'sudo apt' },
-            { numero: 33, nombre: 'Barbie', descripcion: '' },
+            { numero: 33, nombre: 'Barbie', descripcion: 'Every night is girls night' },
             { numero: 35, nombre: 'Cady Heron', descripcion: 'El límite no existe' },
-            { numero: 39, nombre: 'Elle Woods', descripcion: 'what, like its hard?' },
-            { numero: 41, nombre: 'Thranduil', descripcion: '' },
+            { numero: 39, nombre: 'Elle Woods', descripcion: 'What, like its hard?' },
+            { numero: 41, nombre: 'Thranduil', descripcion: 'Con el tiempo, todas las cosas inmundas surgen' },
             { numero: 60, nombre: 'Laika', descripcion: '' },
-            { numero: 63, nombre: 'Appa', descripcion: '' },
+            { numero: 63, nombre: 'Appa', descripcion: '¡Yip yip!' },
         ],
         'cartas_tierra': [
-            { numero: 7, nombre: 'Olivia Rodrigo', descripcion: '' },
-            { numero: 12, nombre: 'Tini', descripcion: 'Estado: Bano de la BRESH' },
-            { numero: 15, nombre: 'Rose', descripcion: '' },
+            { numero: 7, nombre: 'Olivia Rodrigo', descripcion: 'I made the jokes you tell to her when she is with you' },
+            { numero: 12, nombre: 'Tini', descripcion: 'La triple T' },
+            { numero: 15, nombre: 'Rose', descripcion: 'Look at you, now look at me' },
             { numero: 28, nombre: 'Octocat', descripcion: '' },
-            { numero: 29, nombre: 'GNU', descripcion: '' },
-            { numero: 44, nombre: 'Naruto', descripcion: 'komedasai arigato' },
-            { numero: 45, nombre: 'Sakura', descripcion: '' },
-            { numero: 51, nombre: 'Suki', descripcion: '' },
-            { numero: 52, nombre: 'Toph', descripcion: '' },
-            { numero: 58, nombre: 'Steve', descripcion: '' },
+            { numero: 29, nombre: 'GNU', descripcion: 'GNU not Unix' },
+            { numero: 44, nombre: 'Naruto', descripcion: 'Una vez que cuestionas tus propias creencias, estás acabado' },
+            { numero: 45, nombre: 'Sakura', descripcion: '¡Es mejor morir luchando que no hacer nada!' },
+            { numero: 51, nombre: 'Suki', descripcion: 'La líder de las Guerreras Kyoshi' },
+            { numero: 52, nombre: 'Toph', descripcion: 'Ya he visto suficiente de Ba Sing Sei. ¡Y ni siquiera puedo ver!' },
+            { numero: 58, nombre: 'Steve', descripcion: 'Si hay que ser minero' },
             { numero: 59, nombre: 'Creeper', descripcion: 'tsss' },
             { numero: 61, nombre: 'Dolly', descripcion: '' },
-            { numero: 62, nombre: 'Aang', descripcion: '' },
+            { numero: 62, nombre: 'Aang', descripcion: 'El pasado puede ser un gran maestro' },
             { numero: 64, nombre: 'Momo', descripcion: 'chirp chirp' },
         ],
         'cartas_agua': [
-            { numero: 1, nombre: 'Emilia Mernes', descripcion: 'los brillos en los ojos ahora son la tendencia' },
-            { numero: 11, nombre: 'Nicki Nicole', descripcion: '' },
-            { numero: 13, nombre: 'Jennie', descripcion: 'anyehagosaema' },
-            { numero: 20, nombre: 'Moria', descripcion: 'como nos vamos a pelear, somos mujeres del espectaculo' },
-            { numero: 22, nombre: 'Capusotto', descripcion: '' },
-            { numero: 23, nombre: 'Pulpo Paul', descripcion: '' },
+            { numero: 1, nombre: 'Emilia Mernes', descripcion: 'Los brillos en los ojos ahora son la tendencia' },
+            { numero: 11, nombre: 'Nicki Nicole', descripcion: 'Mamichula' },
+            { numero: 13, nombre: 'Jennie', descripcion: 'Boombayah' },
+            { numero: 20, nombre: 'Moria', descripcion: '¿Como nos vamos a pelear? Somos mujeres del espectáculo' },
+            { numero: 22, nombre: 'Capusotto', descripcion: 'Yo soy ídolo del rock' },
+            { numero: 23, nombre: 'Pulpo Paul', descripcion: 'Anulo mufa' },
             { numero: 27, nombre: 'Clippy', descripcion: 'click click' },
             { numero: 31, nombre: 'Docker', descripcion: '*ruido de ballena*' },
-            { numero: 32, nombre: 'Nessie SQL', descripcion: 'que no soy el monstruo del lagonnes' },
+            { numero: 32, nombre: 'Nessie SQL', descripcion: 'que no soy el monstruo del Lago Ness' },
             { numero: 34, nombre: 'Regina George', descripcion: 'Sé que es una retardada social y rara, pero es mi amiga' },
             { numero: 37, nombre: 'Karen Smith', descripcion: 'Im a mouse duh' },
-            { numero: 38, nombre: 'Janis', descripcion: 'es una golfa barata come porquería que arruinó mi vida' },
+            { numero: 38, nombre: 'Janis', descripcion: 'Es una golfa barata come porquería que arruinó mi vida' },
             { numero: 40, nombre: 'Cher', descripcion: 'As if!' },
-            { numero: 42, nombre: 'Legolas', descripcion: '' },
-            { numero: 49, nombre: 'Katara', descripcion: '' },
-            { numero: 50, nombre: 'Sokka', descripcion: '' },
-            { numero: 54, nombre: 'Yue', descripcion: '' },
-            { numero: 55, nombre: 'Korra', descripcion: '' },
+            { numero: 42, nombre: 'Legolas', descripcion: 'Un sol rojo sale. Se ha derramado sangre esta noche' },
+            { numero: 49, nombre: 'Katara', descripcion: 'El amor es más brillante en la oscuridad' },
+            { numero: 50, nombre: 'Sokka', descripcion: '¡Soy muy joven para morir!' },
+            { numero: 54, nombre: 'Yue', descripcion: 'El espíritu de la Luna' },
+            { numero: 55, nombre: 'Korra', descripcion: 'Soy el Avatar, tienes que lidiar con ello!' },
         ]
     };
 
@@ -114,14 +114,6 @@ document.addEventListener('DOMContentLoaded', function () {
             contenedor.appendChild(textoHover);
             grid_img.appendChild(contenedor);
         });
-
-        if (lugar_actual === 3) {
-            boton_anterior.classList.add('ultima_slide');
-            boton_siguiente.classList.add('ultima_slide');
-        } else {
-            boton_anterior.classList.remove('ultima_slide');
-            boton_siguiente.classList.remove('ultima_slide');
-        }
     }
 
     function cambiar_lugar(direccion) {

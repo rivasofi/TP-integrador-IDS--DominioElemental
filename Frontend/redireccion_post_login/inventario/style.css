@@ -440,7 +440,7 @@ footer {
     opacity: 0;
     transform: translateY(0);
     transition: opacity 0.3s, transform 0.3s;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -455,7 +455,7 @@ footer {
 
 .texto-hover p {
     font-size: 16px;
-    margin-top: 8px;
+    margin-top: 0px;
     text-align: center;
 }
 
