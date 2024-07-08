@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     const carpetas = {
         'cartas_fuego': [
-            { numero: 4, nombre: 'SZA' },
-            { numero: 5, nombre: 'Sabrina Carpenter' },
+            { numero: 4, nombre: 'SZA', descripcion: 'Descripción de SZA' },
+            { numero: 5, nombre: 'Sabrina Carpenter', descripcion: 'Descripción de SZA' },
             { numero: 6, nombre: 'Fito Paez' },
             { numero: 8, nombre: 'Melanie Martinez' },
             { numero: 9, nombre: 'Mariah Carey' },
@@ -76,22 +76,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function cargar_imagenes(carpeta_actual) {
         grid_img.innerHTML = '';
-
+    
         const cartas = carpetas[carpeta_actual];
         const boton_anterior = document.getElementById('boton_anterior');
         const boton_siguiente = document.getElementById('boton_siguiente');
-
+    
         cartas.forEach((carta) => {
             const contenedor = document.createElement('div');
             contenedor.classList.add('carta');
-
+    
             const img = document.createElement('img');
             img.src = `${base_path}${carpeta_actual}/frente/${carta.numero}.png`;
             img.alt = `${carpeta_actual} ${carta.numero}`;
-
+    
             const textoHover = document.createElement('div');
             textoHover.classList.add('texto-hover');
-            textoHover.innerHTML = `<span>${carta.nombre}</span><br><p>Descripción de la carta ${carta.numero}</p>`;
+            textoHover.innerHTML = `<span>${carta.nombre}</span><br><p>${carta.descripcion}</p>`;
+            
             switch (carpeta_actual) {
                 case 'cartas_fuego':
                     textoHover.classList.add('cambio-color-fuego');
@@ -108,12 +109,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 default:
                     textoHover.classList.add('cambio-color-default');
             }
-
+    
             contenedor.appendChild(img);
             contenedor.appendChild(textoHover);
             grid_img.appendChild(contenedor);
         });
-
+    
         if (lugar_actual === 3) {
             boton_anterior.classList.add('ultima_slide');
             boton_siguiente.classList.add('ultima_slide');
