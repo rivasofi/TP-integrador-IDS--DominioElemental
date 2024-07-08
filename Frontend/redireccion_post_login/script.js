@@ -23,9 +23,9 @@ function mutear_audio() {
 
 document.addEventListener('DOMContentLoaded',function(){
     const slides=document.querySelectorAll('.slide');
-    const totalSlides=slides.length;
-    let currentSlide=0;
-    function mostrarSlide(index){
+    const total_slides=slides.length;
+    let slide_actual=0;
+    function mostrar_slide(index){
         slides.forEach((slide, idx)=>{
             if (idx===index){
                 slide.classList.add('activa');
@@ -34,22 +34,22 @@ document.addEventListener('DOMContentLoaded',function(){
             }
         });
     }
-    function siguienteSlide(){
-        if (currentSlide === totalSlides - 1){
+    function siguiente_slide(){
+        if (slide_actual === total_slides - 1){
             return;
         }
-        currentSlide=(currentSlide + 1)%totalSlides;
-        mostrarSlide(currentSlide);
+        slide_actual=(slide_actual + 1)%total_slides;
+        mostrar_slide(slide_actual);
     }
     function anteriorSlide(){
-        if (currentSlide===0){
+        if (slide_actual===0){
             return;
         }
-        currentSlide =(currentSlide-1+totalSlides)%totalSlides;
-        mostrarSlide(currentSlide);
+        slide_actual =(slide_actual-1+total_slides)%total_slides;
+        mostrar_slide(slide_actual);
     }
     document.getElementById('boton_siguiente').addEventListener('click',function(){
-        siguienteSlide();
+        siguiente_slide();
     });
     document.getElementById('boton_anterior').addEventListener('click',function(){
         anteriorSlide();

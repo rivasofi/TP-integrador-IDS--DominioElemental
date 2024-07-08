@@ -1,11 +1,11 @@
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    var formData = new FormData(this);
+    var form_data = new FormData(this);
 
     fetch('http://127.0.0.1:5000/submit', {
         method: 'POST',
-        body: formData
+        body: form_data
     })
     .then(response => response.text())
     .then(data => {
