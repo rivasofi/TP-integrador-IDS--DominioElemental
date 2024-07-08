@@ -2,7 +2,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const carpetas = {
         'cartas_fuego': [
             { numero: 4, nombre: 'SZA' },
-            { numero: 5, nombre: '' },
+            { numero: 5, nombre: 'Sabrina Carpenter' },
+            { numero: 6, nombre: 'Fito Paez' },
+            { numero: 8, nombre: 'Melanie Martinez' },
+            { numero: 9, nombre: 'Mariah Carey' },
+            { numero: 14, nombre: 'ITZY' },
+            { numero: 18, nombre: 'Milky Dolly' },
+            { numero: 30, nombre: 'Firefox' },
+            { numero: 36, nombre: 'Gretchen Wieners' },
+            { numero: 43, nombre: 'Gandalf' },
+            { numero: 47, nombre: 'Zuko' },
+            { numero: 48, nombre: 'Azula' },
+            { numero: 57, nombre: 'Iroh' },
         ],
         'cartas_nieve': [
             { numero: 2, nombre: 'Nombre Personalizado' },
