@@ -75,7 +75,7 @@ function check_score() {
             info_display.textContent = "Gano Fuego! Vuelve a la tienda a ver tu saldo actual.";
             sumar_saldo();
             disable_board();
-            show_notification("¡Felicitaciones! Has ganado 2 monedas 🎉🎉");
+            mostrar_alert("¡Felicitaciones! Has ganado 2 monedas 🎉🎉");
             
         }
     });
@@ -131,7 +131,7 @@ function actualizar_saldo_en_interfaz(saldo) {
     }
 }
 
-function show_notification(message) {
+function mostrar_alert(message) {
     const notification = document.createElement("div");
     notification.className = "notification";
     notification.textContent = message;

@@ -198,17 +198,20 @@ function ganar_puntos() {
     if (score == 5) {
         game_vel = 1.5;
         contenedor.classList.add("mediodia");
-        show_notification("¡Felicitaciones! Has ganado 2 monedas 🎉🎉");
+        mostrar_alert("¡Felicitaciones! Has ganado 1 moneda 🎉🎉");
+        sumar_saldo();
     } else if (score == 10) {
         game_vel = 2;
         contenedor.classList.add("tarde");
-        show_notification("¡A por todo! Has ganado 2 monedas mas 😎🤩");
+        sumar_saldo();
+        mostrar_alert("¡A por todo! Has ganado 1 moneda mas 😎🤩");
         
 
     } else if (score == 20) {
         game_vel = 3;
         contenedor.classList.add("noche");
-        show_notification("¡Segui asi! Has ganado 2 monedas mas 🎉🎉");
+        mostrar_alert("¡Segui asi! Has ganado 1 moneda mas 🎉🎉");
+        sumar_saldo();
     }
     suelo.style.animationDuration = (3 / game_vel) + "s";
 }
@@ -243,7 +246,7 @@ function is_collision(a, b, padding_top, padding_right, padding_bottom, padding_
     );
 }
 
-function show_notification(message) {
+function mostrar_alert(message) {
     const notification = document.createElement("div");
     notification.className = "notification";
     notification.textContent = message;
@@ -252,4 +255,45 @@ function show_notification(message) {
     setTimeout(() => {
         notification.style.display = "none";
     }, 3000);
+}
+
+function sumar_saldo() {
+    fetch('http://127.0.0.1:5000/sumar_saldo', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({})
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        const saldo_usuario = document.getElementById('saldo-usuario');
+        if (saldo_usuario) {
+            saldo_usuario.textContent = data.saldo;
+            console.log('Saldo actualizado:', data.saldo);
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', obtener_saldo);
+
+function obtener_saldo() {
+    fetch('/saldo')
+        .then(response => response.json())
+        .then(data => {
+            const saldo_usuario = data.saldo;
+            actualizar_saldo_en_interfaz(saldo_usuario);
+        });
+}
+
+function actualizar_saldo_en_interfaz(saldo) {
+    const saldo_elemento = document.getElementById('saldo-usuario');
+    if (saldo_elemento) {
+        saldo_elemento.textContent = saldo;
+    }
 }
