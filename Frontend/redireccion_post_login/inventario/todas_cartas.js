@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     const carpetas = {
-        'cartas_fuego': [4, 5, 6, 8, 9, 14, 18, 30, 36, 43, 47, 48, 57],
-        'cartas_nieve': [2, 3, 10, 16, 17, 19, 21, 26, 33, 35, 39, 41, 60, 63],
-        'cartas_tierra': [7, 12, 15, 28, 29, 44, 45, 51, 52, 58, 59, 61, 62, 64],
-        'cartas_agua': [1, 11, 13, 20, 22, 23, 27, 31, 32, 34, 37, 38, 40, 42, 49, 50, 54, 55]
+        'cartas_fuego': 25,
+        'cartas_nieve': 27,
+        'cartas_tierra': 27,
+        'cartas_agua': 35
     };
 
     const base_path = '../../recursos_multimedia/Cartas/';
@@ -14,14 +14,15 @@ document.addEventListener('DOMContentLoaded', function () {
     function cargar_imagenes(carpeta_actual) {
         grid_img.innerHTML = '';
 
-        const cartas = carpetas[carpeta_actual];
+        const cant_imagenes = carpetas[carpeta_actual];
         const boton_anterior = document.getElementById('boton_anterior');
         const boton_siguiente = document.getElementById('boton_siguiente');
 
-        cartas.forEach((numero_carta, index) => {
+        for (let i = 1; i <= cant_imagenes; i += 2) {
             const img = document.createElement('img');
-            img.src = `${base_path}${carpeta_actual}/frente/${numero_carta}.png`;
-            img.alt = `${carpeta_actual} ${numero_carta}`;
+            img.src = `${base_path}${carpeta_actual}/frente/${i}.png`;
+            img.alt = `${carpeta_actual} ${i}`;
+
 
             if (lugar_actual === 3) {
                 img.classList.add('imagen-chica');
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             grid_img.appendChild(img);
-        });
+        }
     }
 
     function cambiar_lugar(direccion) {
@@ -49,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const carpeta_actual = carpetas_keys[lugar_actual];
         cargar_imagenes(carpeta_actual);
+
     }
 
     cargar_imagenes(Object.keys(carpetas)[0]);
@@ -60,4 +62,5 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('boton_siguiente').addEventListener('click', function () {
         cambiar_lugar(1);
     });
+
 });
