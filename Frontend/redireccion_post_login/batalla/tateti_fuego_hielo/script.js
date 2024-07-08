@@ -74,6 +74,7 @@ function checkScore() {
         
         if (fuegoWins) {
             infoDisplay.textContent = "Gano Fuego! Vuelve a la tienda a ver tu saldo actual.";
+            sumar_saldo();
             disableBoard();
         }
     });
@@ -86,4 +87,43 @@ function disableBoard() {
         square.replaceWith(newSquare);
     });
 }
+function sumar_saldo() {
+    fetch('http://127.0.0.1:5000/sumar_saldo', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({})
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        const saldo_usuario = document.getElementById('saldo-usuario');
+        if (saldo_usuario) {
+            saldo_usuario.textContent = data.saldo;
+            console.log('Saldo actualizado:', data.saldo);
+        }
+    });
+}
 
+document.addEventListener('DOMContentLoaded', obtener_saldo);
+
+function obtener_saldo() {
+    fetch('/saldo')
+        .then(response => response.json())
+        .then(data => {
+            const saldo_usuario = data.saldo;
+            actualizar_saldo_en_interfaz(saldo_usuario);
+        });
+}
+
+function actualizar_saldo_en_interfaz(saldo) {
+    const saldo_elemento = document.getElementById('saldo-usuario');
+    if (saldo_elemento) {
+        saldo_elemento.textContent = saldo;
+    }
+}

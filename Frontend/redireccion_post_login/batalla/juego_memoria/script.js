@@ -82,7 +82,7 @@ function destapar(id){
                 mostrarMovimientos.innerHTML = `Movimientos: ${movimientos} 🙌🏼`;
                 mostrarTiempo.innerHTML =  `Fantastico! 🎉 Solo tardaste: ${timerInicial - timer} segundos`;
                 alert("¡Felicitaciones! Has ganado $8 monedas 🎉💰");
-                sumar_saldo();
+
                 fetch('/sumar_saldo_juego', {
                     method: 'POST',
                     headers: {
@@ -123,24 +123,28 @@ function sumar_saldo() {
         return response.json();
     })
     .then(data => {
-
-        document.getElementById('saldo-usuario').textContent = data.saldo;
-        console.log('Saldo actualizado:', data.saldo);
-    })
+        const saldo_usuario = document.getElementById('saldo-usuario');
+        if (saldo_usuario) {
+            saldo_usuario.textContent = data.saldo;
+            console.log('Saldo actualizado:', data.saldo);
+        }
+    });
 }
-document.addEventListener('DOMContentLoaded', obtenerSaldo);
 
-function obtenerSaldo() {
+document.addEventListener('DOMContentLoaded', obtener_saldo);
+
+function obtener_saldo() {
     fetch('/saldo')
         .then(response => response.json())
         .then(data => {
-            const saldoUsuario = data.saldo;
-            actualizarSaldoEnInterfaz(saldoUsuario);
-        })
+            const saldo_usuario = data.saldo;
+            actualizar_saldo_en_interfaz(saldo_usuario);
+        });
 }
-function actualizarSaldoEnInterfaz(saldo) {
-    const saldoElemento = document.getElementById('saldo-usuario');
-    if (saldoElemento) {
-        saldoElemento.textContent = saldo;
+
+function actualizar_saldo_en_interfaz(saldo) {
+    const saldo_elemento = document.getElementById('saldo-usuario');
+    if (saldo_elemento) {
+        saldo_elemento.textContent = saldo;
     }
 }
