@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podras Responder Todas Bien?</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<audio id="background-audio" src="../../recursos_multimedia/login-musica.mp3" autoplay loop></audio>
+
+<header>
+    <nav class="navegacion">
+        <button onclick="redireccionar('../index.html')">Salir</button>
+    </nav>
+</header>
+
+<body>
+    <div class="box">
+        <h1>PREGUNTA2</h1>
+        <div id="resultados" style="display: none;">
+            <p>Respuestas Correctas: <span id="contador_corr">0</span></p>
+            <p>Respuestas Incorrectas: <span id="contador_inc">0</span></p>
+        </div>
+        <div id="pregunta"></div>
+        <form id="preguntas_form">
+            <input type="radio" name="rta" id="opcion1">
+            <label for="opcion1" id="opcion_1"></label><br>
+            <input type="radio" name="rta" id="opcion2">
+            <label for="opcion2" id="opcion_2"></label><br>
+            <input type="radio" name="rta" id="opcion3">
+            <label for="opcion3" id="opcion_3"></label><br>
+            <input type="radio" name="rta" id="opcion4">
+            <label for="opcion4" id="opcion_4"></label><br><br>
+            <button type="submit">Continuar</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <button id="boton_terminar" onclick="terminar_juego()">Terminar Juego</button>
+            <button class="boton_volumen" onclick="mutear_audio()"><i class='bx bx-volume-full icon-volume'></i></button>
+        </div>
+    </footer>
+
+<script src="script.js"></script>
+<script src="../script.js"></script>
+</html>

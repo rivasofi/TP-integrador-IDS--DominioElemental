@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    background-color: #00000057;
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.navegacion a:not(.batalla_efecto a) {
+    font-size: 18px;
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.navegacion a:hover {
+    color: #E88B40;
+    transform: scale(1.1);
+}
+
+.navegacion button {
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    margin-left: auto;
+    background: transparent;
+    border: 1px solid white;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 8px 16px;
+}
+
+.navegacion button:hover {
+    color: aliceblue;
+    background-color: #003F7D;
+    box-shadow: 0 5px 20px rgba(182, 166, 92, 0.4);
+}
+
+.batalla_efecto a {
+    position: relative;
+    font-size: 18px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    margin-right: 10px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(../../../recursos_multimedia/27.png) no-repeat;
+    background-position: center;
+    backdrop-filter: blur(5px);
+    background-size: cover;
+    padding-bottom: 80px;
+    text-align: center;
+}
+.container {
+    position: absolute;
+    top: 45px;
+    left: 410px;
+    text-align: left;
+    width: auto;
+}
+
+.titulo-y-botones {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+h1 {
+    color: white;
+    font-size: 35px;
+    animation: brillo_texto 2.5s infinite;
+    animation-timing-function: ease-in-out;
+    text-align: center;
+    margin-top: 65px;
+    margin-bottom: 20px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #00000057;
+    text-align: right;
+    padding: 10px 20px;
+}
+
+.boton_volumen {
+    color: white;
+    font-size: 1.84em;
+    font-weight: 500;
+    margin-left: 40px;
+    margin-top: 4px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: 1px solid white;
+    outline: none;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+
+.boton_volumen:hover {
+    color: aliceblue;
+    background-color: #FF8E00;
+    cursor: pointer;
+}
+.box {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h1 {
+    animation: cambio_color_quiz 5s infinite;
+    margin-top: 0;
+}
+
+form {
+    text-align: left;
+}
+
+button {
+    background-color: #003366;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #FF5003;
+}
+
+#resultados {
+    text-align: left;
+    margin-top: 20px;
+}
+
+#resultados p {
+    margin-bottom: 10px;
+}
+
+@keyframes cambio_color_quiz {
+    0% { color: #0f5e9c; }
+    25% { color: #2389da; } 
+    50% { color: #1ca3ec; } 
+    75% { color: #5abcd8; } 
+    100% { color: #0f5e9c; } 
+}
+
+#boton_terminar {
+    background-color: #FF5003;
+    width:10%;
+    height:60%;
+    color: white; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+
+#boton_terminar:hover {
+    background-color: #FF7C47; 
+}
+.correcto {
+    color: green;
+    font-weight: bold;
+}
+
+.incorrecto {
+    color: red;
+    font-weight: bold;
+}
+
+#pregunta {
+    animation: cambio_exito 5s infinite;
+
+}
+
+@keyframes cambio_exito {
+    0% { color: green;}
+    50% { color: greenyellow;} 
+    100% { color: green;} 
+}

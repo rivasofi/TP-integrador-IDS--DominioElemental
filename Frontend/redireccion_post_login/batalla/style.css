@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    background-color: #00000057;
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.navegacion a:not(.batalla_efecto a) {
+    font-size: 18px;
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.navegacion a:hover {
+    color: #E88B40;
+    transform: scale(1.1);
+}
+
+.navegacion button {
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    margin-left: auto;
+    background: transparent;
+    border: 1px solid white;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 8px 16px;
+}
+
+.navegacion button:hover {
+    color: aliceblue;
+    background-color: #003F7D;
+    box-shadow: 0 5px 20px rgba(182, 166, 92, 0.4);
+}
+
+.batalla_efecto a {
+    position: relative;
+    font-size: 18px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    margin-right: 10px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(../../recursos_multimedia/fondo_batalla.png) no-repeat;
+    background-position: center;
+    backdrop-filter: blur(5px);
+    background-size: cover;
+    padding-bottom: 80px;
+}
+
+.container {
+    position: absolute;
+    top: 45px;
+    left: 410px;
+    text-align: left;
+    width: auto;
+}
+
+.titulo-y-botones {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+h1 {
+    color: white;
+    font-size: 35px;
+    animation: brillo_texto 2.5s infinite;
+    animation-timing-function: ease-in-out;
+    text-align: left;
+    margin-top: 65px;
+    margin-bottom: 20px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #00000057;
+    text-align: right;
+    padding: 10px 20px;
+}
+
+.boton_volumen {
+    color: white;
+    font-size: 1.84em;
+    font-weight: 500;
+    margin-left: 40px;
+    margin-top: 4px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: 1px solid white;
+    outline: none;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+
+.boton_volumen:hover {
+    color: aliceblue;
+    background-color: #FF8E00;
+    cursor: pointer;
+}
+.box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin: auto;
+    max-width: 900px;
+}
+
+.item_grid {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.item_grid:hover {
+    transform: scale(1.01);
+}
+
+.item_grid img {
+    font-weight: 500;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.item_grid:hover img {
+    opacity: 0.8;
+}
+
+.titulo_juego {
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    font-size: 28px;
+    transition: opacity 0.3s ease;
+}
+
+.item_grid:hover .titulo_juego {
+    opacity: 1;
+}
+.titulo_juego.juego_memotest {
+    animation: cambio_juego_agua 2s infinite;
+    text-align: center;
+}
+
+.titulo_juego.juego_2 {
+    animation: cambio_juego_fuego 2s infinite;
+    text-align: center;
+}
+
+.titulo_juego.juego_3 {
+    animation: cambio_juego_tierra 2s infinite;
+    text-align: center;
+}
+
+.titulo_juego.juego_4 {
+    animation: cambio_juego_hielo 2s infinite;
+    text-align: center;
+}
+
+@keyframes cambio_juego_hielo {
+    0% { color: #ffffff;}
+    25% { color:#b9e8ea;} 
+    50% { color: #86d6d8;} 
+    75% { color: #3fd0d4;} 
+    100% { color: #ffffff;} 
+}
+
+@keyframes cambio_juego_agua {
+    0% { color: #0f5e9c;}
+    25% { color:#2389da;} 
+    50% { color: #1ca3ec;} 
+    75% { color: #5abcd8;} 
+    100% { color: #0f5e9c;} 
+}
+
+@keyframes cambio_juego_fuego{
+    0% { color: #ff0000;}
+    25% { color:#ff5a00;} 
+    50% { color: #ff9a00;} 
+    75% { color: #ffce00;} 
+    100% { color: #ff0000;} 
+}
+
+@keyframes cambio_juego_tierra {
+    0% { color: #b69f66;}
+    25% { color:#6b5428;} 
+    50% { color: #6b5428;} 
+    75% { color: #76552b;} 
+    100% { color: #b69f66;} 
+}

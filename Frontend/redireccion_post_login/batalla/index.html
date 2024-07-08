@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batalla</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<audio id="hover-sound" src="../../recursos_multimedia/hover_tienda.mp3"></audio> 
+<audio id="background-audio" src="../../recursos_multimedia/login-musica.mp3" autoplay loop></audio>
+
+<header>
+    <nav class="navegacion">
+        <a href="../index.html">Guía inicial</a>
+        <a href="../inventario/index.html">Inventario</a>
+        <nav class="batalla_efecto">
+            <a href="../batalla/index.html">BATALLA</a>
+        </nav>
+        <a href="../tienda/index.html">Tienda</a>
+        <button onclick="redireccionar('../../index.html')">Logout</button>
+    </nav>
+</header>
+<div class="box">
+    <a href="../batalla/memotest_agua/index.html" class="item_grid" onmouseenter="playHoverSound()">
+        <img src="../../recursos_multimedia/30.png" alt="juego_preguntas">
+        <span class="titulo_juego juego_memotest">PROBA TU CONOCIMIENTO!</span>
+    </a>
+    <a href="archivo2.html" class="item_grid" onmouseenter="playHoverSound()">
+        <img src="../../recursos_multimedia/fond_tablero.jpg" alt="juego_correr">
+        <span class="titulo_juego juego_2">CUIDADO CON EL FUEGO!</span>
+    </a>
+    <a href="../batalla/tateti_fuego_hielo/index.html" class="item_grid" onmouseenter="playHoverSound()">
+        <img src="../../recursos_multimedia/imagenes_login/login_11.png" alt="juego_nati">
+        <span class="titulo_juego juego_3">JUEGO NATI</span>
+    </a>
+    <a href="archivo4.html" class="item_grid" onmouseenter="playHoverSound()">
+        <img src="../../recursos_multimedia/imagenes_login/login_10.png" alt="juego_sofi">
+        <span class="titulo_juego juego_4">JUEGO mhmm</span>
+    </a>
+</div>
+<footer>
+    <div class="footer-content">
+        <button class="boton_volumen" onclick="mutear_audio()"><i class='bx bx-volume-full icon-volume'></i></button>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="../script.js"></script>
+
+</body>
+
+</html>
