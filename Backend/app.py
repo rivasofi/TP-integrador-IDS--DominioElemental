@@ -101,6 +101,25 @@ def comprar_carta():
     else:
         return jsonify({'error': 'Usuario no encontrado.'}), 404
     
+@app.route('/cartas_usuario')
+def obtener_cartas_usuario():
+    usuario_demo = Usuario.query.filter_by(nombre='Demo').first()
+    if usuario_demo:
+        cartas_usuario = CartasUsuario.query.filter_by(usuario_id=usuario_demo.id).all()
+        cartas = []
+        for cu in cartas_usuario:
+            carta = Carta.query.get(cu.carta_id)
+            if carta:
+                cartas.append({
+                    'id': carta.id,
+                    'nombre': carta.nombre,
+                    'elemento': carta.elemento,
+                    'poder': carta.poder,
+                    'cantidad': cu.cantidad
+                })
+        return jsonify(cartas)
+    return jsonify([])
+    
 if __name__ == '__main__':
     
     with app.app_context():
@@ -184,3 +203,13 @@ if __name__ == '__main__':
             db.session.commit()
 
     app.run(debug=True)
+    
+@app.route('/sumar_saldo', methods=['POST'])
+def sumar_saldo():
+    usuario_demo = Usuario.query.filter_by(nombre='Demo').first()
+    if usuario_demo:
+        usuario_demo.plata += 1
+        db.session.commit()
+        return jsonify({'mensaje': 'Saldo sumado correctamente.', 'saldo': usuario_demo.plata}), 200
+    else:
+        return jsonify({'error': 'Usuario no encontrado.'}), 404

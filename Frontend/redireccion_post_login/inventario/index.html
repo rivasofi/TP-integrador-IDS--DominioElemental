@@ -74,10 +74,14 @@
     </section>
 </div>
 
-<div>
-    <h1>Tus cartas</h1>
-    <img class="no_cartas" src="../../recursos_multimedia/no_cartas.png">
-    <button onclick="redireccionar('total_cartas.html')" class="todas_cartas">Total de cartas que podes obtener</button>
+<div class>
+    <h1 class="tus_cartas">Tus cartas</h1>
+    <div class="contenedor_cartas"></div>
+    <div class="controles_invent">
+        <button id="boton_anterior" onclick="cambiar_lugar(-1)"><i class="bx bx-chevron-left"></i></button>
+        <button id="boton_siguiente" onclick="cambiar_lugar(1)"><i class="bx bx-chevron-right"></i></button>
+    </div>
+    <button onclick="redireccionar('total_cartas.html')" class="todas_cartas">Total de cartas que puedes obtener</button>
 </div>
 
 <footer>
