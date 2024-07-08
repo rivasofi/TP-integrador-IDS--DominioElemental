@@ -1,0 +1,78 @@
+body{
+    background: url(/Users/natasha/web-intro/Frontend/recursos_multimedia/fondo_memoria.jpeg) no-repeat center center fixed; 
+    background-size: cover; 
+    backdrop-filter: blur(5px);
+    font-family: sans-serif;
+    color: white; 
+}
+
+main{
+    width: 730px;
+    margin: 100px auto 50px; 
+    display: flex;
+    align-items: center;
+}
+h1{
+    text-align: center;
+}
+button{
+    height:100px; 
+    width: 100px;
+    font-size: 40px; 
+    color: white;
+    font-weight: bold;  
+
+}
+
+.section1{
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0 10px 10px 10px;
+    border-radius: 8px;
+
+}
+
+
+.section2{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-top-right-radius:8px ;
+    border-bottom-right-radius: 8px;
+    width: 250px;
+    height:400px; 
+    padding: 0 20px;
+}
+
+.estadisticas{
+    border: 1px solid white; 
+    height: 105px; 
+    border-radius: 8px;
+    padding:8px 20px; 
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    justify-content: space-between;
+    padding: 10px 20px;
+    
+}
+
+
+.navegacion a {
+    font-size: 18px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    margin-left: 40px;
+    margin-right: 10px;
+    transition: 0.5s;
+    font-family: sans-serif;
+    position: center;
+    text-align: center;
+}
