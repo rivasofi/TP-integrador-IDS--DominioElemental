@@ -12,103 +12,110 @@
 </head>
 
 <audio id="background-audio" src="../../recursos_multimedia/login-musica.mp3" autoplay loop></audio>
-    <header>
-        <nav class="navegacion">
-            <a href="../index.html">Guía inicial</a>
-            <a href="../inventario/index.html">Inventario</a>
-            <nav class="batalla_efecto">
-                <a href="../batalla/index.html">BATALLA</a>
-            </nav>
-            <a href="index.html" class="tienda">Tienda</a>
-            <button onclick="redireccionar('../../index.html')">Logout</button>
+<header>
+    <nav class="navegacion">
+        <a href="../index.html">Guía inicial</a>
+        <a href="../inventario/index.html">Inventario</a>
+        <nav class="batalla_efecto">
+            <a href="../batalla/index.html">BATALLA</a>
         </nav>
-    </header>
-    <main>
-        <div class="box">
-            <section class="tienda_grid">
-                <div class="elem_grande">
-                    <img src="../../recursos_multimedia/aleatorio_1.png" alt="pack_aleatorio">
-                    <div class="detalles_items">
-                        <h2>Pack Aleatorio</h2>
-                        <p>"Juntos forman la receta básica del caos controlado!"</p>
-                        <p>‎ </p>
-                        <button class="boton_comprar" onclick="confirmar_compra('Pack Aleatorio', 10)"><i class='bx bx-dollar-circle'></i> Comprar Pack 10</button>
-                    </div>
+        <a href="index.html" class="tienda">Tienda</a>
+        <button onclick="redireccionar('../../index.html')">Logout</button>
+    </nav>
+</header>
+<main>
+    <div class="box">
+        <section class="tienda_grid">
+            <div class="elem_grande">
+                <img src="../../recursos_multimedia/aleatorio_1.png" alt="pack_aleatorio">
+                <div class="detalles_items">
+                    <h2>Pack Aleatorio</h2>
+                    <p>"Juntos forman la receta básica del caos controlado!"</p>
+                    <p>‎ </p>
+                    <button class="boton_comprar" onclick="confirmar_compra('Pack Aleatorio', 10)"><i
+                            class='bx bx-dollar-circle'></i> Comprar Pack 10</button>
                 </div>
-                
-                <div class="item pack_hielo">
-                    <img src="../../recursos_multimedia/pack_hielo.png" alt="pack_hielo">
-                    <div class="detalles_items">
-                        <h2>Pack Hielo</h2>
-                        <p>"I see that im ICY "</p>
-                        <p>‎ </p>
-                        <p>‎ </p>
-                        <button class="boton_comprar" onclick="confirmar_compra('Pack Hielo', 15)"><i class='bx bx-dollar-circle'></i> Comprar Pack 15</button>
-                    </div>
-                </div>
-                
-                <div class="item pack_fuego">
-                    <img src="../../recursos_multimedia/pack_fuego.png" alt="pack_fuego">
-                    <div class="detalles_items">
-                        <h2>Pack Fuego</h2>
-                        <p>"No juegues con fuego... porque te vas a quemar."</p>
-                        <p>‎ </p>
-                        <button class="boton_comprar" onclick="confirmar_compra('Pack Fuego', 15)"><i class='bx bx-dollar-circle'></i> Comprar Pack 15</button>
-                    </div>
-                </div>
-
-                <div class="item pack_agua">
-                    <img src="../../recursos_multimedia/pack_agua.png" alt="pack_agua">
-                    <div class="detalles_items">
-                        <h2>Pack Agua</h2>
-                        <p>"El único elemento que puedes beber y ducharte al mismo tiempo."</p>
-                        <button class="boton_comprar" onclick="confirmar_compra('Pack Agua', 15)"><i class='bx bx-dollar-circle'></i> Comprar Pack 15</button>
-                    </div>
-                </div>
-
-                <div class="item pack_tierra">
-                    <img src="../../recursos_multimedia/pack_tierra.png" alt="pack_tierra">
-                    <div class="detalles_items">
-                        <h2>Pack Tierra</h2>
-                        <p>"La tierra, fuente de vida y elemento fundamental en la naturaleza."</p>
-                        <button class="boton_comprar" onclick="confirmar_compra('Pack Tierra', 15)"><i class='bx bx-dollar-circle'></i> Comprar Pack 15</button>
-                    </div>
-                </div>
-                <div class="item ganar_dinero">
-                    <img src="../../recursos_multimedia/banner_plata.png" alt="ganar_plata">
-                    <div class="detalles_items">
-                        <h2>GANA DINERO</h2>
-                        <p>"¡Responde preguntas para ganar monedas!"</p>
-                        <button class="boton_comprar">QUIERO! <i class='bx bx-dollar-circle'></i></button>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-    <footer>
-        <div class="footer-content">
-            <div class="plata">
-                <span>Saldo: $<span id="saldo-usuario">Cargando...</span></span>
-                <div class="info_plata">El dinero sirve para comprar mas pull. Puedes conseguir mas ganando battalas o en la tienda </div>
             </div>
-            <button class="boton_volumen" onclick="mutear_audio()"><i
-                    class='bx bx-volume-full icon-volume'></i></button>
+
+            <div class="item pack_hielo">
+                <img src="../../recursos_multimedia/pack_hielo.png" alt="pack_hielo">
+                <div class="detalles_items">
+                    <h2>Pack Hielo</h2>
+                    <p>"I see that im ICY "</p>
+                    <p>‎ </p>
+                    <p>‎ </p>
+                    <button class="boton_comprar" onclick="confirmar_compra('Pack Hielo', 15)"><i
+                            class='bx bx-dollar-circle'></i> Comprar Pack 15</button>
+                </div>
+            </div>
+
+            <div class="item pack_fuego">
+                <img src="../../recursos_multimedia/pack_fuego.png" alt="pack_fuego">
+                <div class="detalles_items">
+                    <h2>Pack Fuego</h2>
+                    <p>"No juegues con fuego... porque te vas a quemar."</p>
+                    <p>‎</p>
+                    <button class="boton_comprar" onclick="confirmar_compra('Pack Fuego', 15)"><i
+                            class='bx bx-dollar-circle'></i> Comprar Pack 15</button>
+                </div>
+            </div>
+
+            <div class="item pack_agua">
+                <img src="../../recursos_multimedia/pack_agua.png" alt="pack_agua">
+                <div class="detalles_items">
+                    <h2>Pack Agua</h2>
+                    <p>"El único elemento que puedes beber y ducharte al mismo tiempo."</p>
+                    <button class="boton_comprar" onclick="confirmar_compra('Pack Agua', 15)"><i
+                            class='bx bx-dollar-circle'></i> Comprar Pack 15</button>
+                </div>
+            </div>
+
+            <div class="item pack_tierra">
+                <img src="../../recursos_multimedia/pack_tierra.png" alt="pack_tierra">
+                <div class="detalles_items">
+                    <h2>Pack Tierra</h2>
+                    <p>"La tierra, fuente de vida y elemento fundamental en la naturaleza."</p>
+                    <button class="boton_comprar" onclick="confirmar_compra('Pack Tierra', 15)"><i
+                            class='bx bx-dollar-circle'></i> Comprar Pack 15</button>
+                </div>
+            </div>
+            <div class="item ganar_dinero">
+                <img src="../../recursos_multimedia/banner_plata.png" alt="ganar_plata">
+                <div class="detalles_items">
+                    <h2>GANA DINERO</h2>
+                    <p>"¡Juga minijuegos para ganar monedas!"</p>
+                    <p>‎ </p>
+                    <button class="boton_comprar" onclick="redireccionar('../batalla/index.html')">¡QUIERO! <i class='bx bx-dollar-circle'></i></button>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<footer>
+    <div class="footer-content">
+        <div class="plata">
+            <span>Saldo: $<span id="saldo-usuario">Cargando...</span></span>
+            <div class="info_plata">El dinero sirve para comprar mas pull. Puedes conseguir mas ganando battalas o en la
+                tienda </div>
         </div>
-    </footer>
-    <div id="cartel_popup" class="cartel_popup"></div>
+        <button class="boton_volumen" onclick="mutear_audio()"><i class='bx bx-volume-full icon-volume'></i></button>
+    </div>
+</footer>
+<div id="cartel_popup" class="cartel_popup"></div>
 <div id="cartel_compra" class="cartel">
     <div class="contenido_cartel">
-        <p id="mensaje_confirmar">Estas segurx que deseas realizar esta compra?</p>
+        <p id="mensaje_confirmar">¿Estas segurx que deseas realizar esta compra?</p>
         <div id="botones_confirmar_compra">
             <button class="botones_confirmar_compra boton_cancelar" onclick="cerrar_compra()">Cancelar</button>
             <button class="botones_confirmar_compra boton_confirmar" onclick="realizar_compra()">Confirmar</button>
         </div>
         <div id="mensaje_exito" class="cartel_exito">
-            <p>Compra realizada con exito. Buena Suerte!</p>
+            <p>Compra realizada con éxito ¡Buena Suerte!</p>
         </div>
     </div>
 </div>
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
+
 </html>
