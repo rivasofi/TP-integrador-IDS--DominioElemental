@@ -1,92 +1,95 @@
-const gameBoard = document.querySelector("#gameboard");
-const infoDisplay = document.querySelector("#info");
-const startCells = ["", "", "", "", "", "", "", "", ""];
-infoDisplay.style.fontFamily = "'Open Sans', sans-serif";
-infoDisplay.style.color = "white";
+const game_board = document.querySelector("#gameboard");
+const info_display = document.querySelector("#info");
+const start_cells = ["", "", "", "", "", "", "", "", ""];
+info_display.style.fontFamily = "'Open Sans', sans-serif";
+info_display.style.color = "white";
 let go = "fuego"; 
-infoDisplay.textContent = "A jugar!";
+info_display.textContent = "A jugar!";
 
-
-function createBoard() {
-    startCells.forEach((_cell, index) => {
-        const cellElement = document.createElement("div");
-        cellElement.classList.add("square");
-        cellElement.id = index;
-        cellElement.addEventListener("click", addGo);
-        gameBoard.append(cellElement);
+function create_board() {
+    start_cells.forEach((_cell, index) => {
+        const cell_element = document.createElement("div");
+        cell_element.classList.add("square");
+        cell_element.id = index;
+        cell_element.addEventListener("click", add_go);
+        game_board.append(cell_element);
     });
 
-    
-    setTimeout(makeRandomMove, 500);
+    setTimeout(make_random_move, 500);
 }
 
-createBoard();
+create_board();
 
-function addGo(e) {
+function add_go(e) {
     if (go === "fuego") {
         console.log("clicked", e.target);
-        const goDisplay = document.createElement("div");
-        goDisplay.classList.add(go);
-        e.target.append(goDisplay);
-        e.target.removeEventListener("click", addGo);
+        const go_display = document.createElement("div");
+        go_display.classList.add(go);
+        e.target.append(go_display);
+        e.target.removeEventListener("click", add_go);
         go = "hielo";
-        infoDisplay.textContent = "Ahora es el turno de hielo.";
-        checkScore();
-        setTimeout(makeRandomMove, 500);
+        info_display.textContent = "Ahora es el turno de hielo.";
+        check_score();
+        setTimeout(make_random_move, 500);
     }
 }
 
-function makeRandomMove() {
-    const allSquares = document.querySelectorAll(".square");
-    const emptySquares = Array.from(allSquares).filter(square => !square.firstChild);
-    if (emptySquares.length > 0 && go === "hielo") {
-        const randomIndex = Math.floor(Math.random() * emptySquares.length);
-        const randomSquare = emptySquares[randomIndex];
-        const goDisplay = document.createElement("div");
-        goDisplay.classList.add("hielo");
-        randomSquare.append(goDisplay);
-        randomSquare.removeEventListener("click", addGo);
+function make_random_move() {
+    const all_squares = document.querySelectorAll(".square");
+    const empty_squares = Array.from(all_squares).filter(square => !square.firstChild);
+    if (empty_squares.length > 0 && go === "hielo") {
+        const random_index = Math.floor(Math.random() * empty_squares.length);
+        const random_square = empty_squares[random_index];
+        const go_display = document.createElement("div");
+        go_display.classList.add("hielo");
+        random_square.append(go_display);
+        random_square.removeEventListener("click", add_go);
         go = "fuego";
-        infoDisplay.textContent = "Ahora es el turno de fuego.";
-        checkScore();
+        info_display.textContent = "Ahora es el turno de fuego.";
+        check_score();
     }
 }
 
-function checkScore() {
-    const allSquares = document.querySelectorAll(".square");
-    const winningCombos = [
+function check_score() {
+    const all_squares = document.querySelectorAll(".square");
+    const winning_combos = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8], 
         [0, 3, 6], [1, 4, 7], [2, 5, 8], 
         [0, 4, 8], [2, 4, 6]
     ];
     
-    winningCombos.forEach(array => {
-        const hieloWins = array.every(cell => allSquares[cell].firstChild?.classList.contains("hielo"));
+    winning_combos.forEach(array => {
+        const hielo_wins = array.every(cell => all_squares[cell].firstChild?.classList.contains("hielo"));
         
-        if (hieloWins) {
-            infoDisplay.textContent = "Gano Hielo! Vuelve a la tienda a ver tu saldo actual.";
-            disableBoard();
+        if (hielo_wins) {
+            info_display.textContent = "Gano Hielo! Vuelve a la tienda a ver tu saldo actual.";
+            disable_board();
+
         }
     });
 
-    winningCombos.forEach(array => {
-        const fuegoWins = array.every(cell => allSquares[cell].firstChild?.classList.contains("fuego"));
+    winning_combos.forEach(array => {
+        const fuego_wins = array.every(cell => all_squares[cell].firstChild?.classList.contains("fuego"));
         
-        if (fuegoWins) {
-            infoDisplay.textContent = "Gano Fuego! Vuelve a la tienda a ver tu saldo actual.";
+        if (fuego_wins) {
+            info_display.textContent = "Gano Fuego! Vuelve a la tienda a ver tu saldo actual.";
             sumar_saldo();
-            disableBoard();
+            disable_board();
+            show_notification("¡Felicitaciones! Has ganado 2 monedas");
+            
         }
     });
 }
 
-function disableBoard() {
-    const allSquares = document.querySelectorAll(".square");
-    allSquares.forEach(square => {
-        const newSquare = square.cloneNode(true);
-        square.replaceWith(newSquare);
+function disable_board() {
+    const all_squares = document.querySelectorAll(".square");
+    all_squares.forEach(square => {
+        const new_square = square.cloneNode(true);
+        square.replaceWith(new_square);
+        
     });
 }
+
 function sumar_saldo() {
     fetch('http://127.0.0.1:5000/sumar_saldo', {
         method: 'POST',
@@ -126,4 +129,15 @@ function actualizar_saldo_en_interfaz(saldo) {
     if (saldo_elemento) {
         saldo_elemento.textContent = saldo;
     }
+}
+
+function show_notification(message) {
+    const notification = document.createElement("div");
+    notification.className = "notification";
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    notification.style.display = "block";
+    setTimeout(() => {
+        notification.style.display = "none";
+    }, 3000);
 }
