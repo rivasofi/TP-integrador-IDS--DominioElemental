@@ -184,3 +184,13 @@ if __name__ == '__main__':
             db.session.commit()
 
     app.run(debug=True)
+    
+@app.route('/sumar_saldo', methods=['POST'])
+def sumar_saldo():
+    usuario_demo = Usuario.query.filter_by(nombre='Demo').first()
+    if usuario_demo:
+        usuario_demo.plata += 1
+        db.session.commit()
+        return jsonify({'mensaje': 'Saldo sumado correctamente.', 'saldo': usuario_demo.plata}), 200
+    else:
+        return jsonify({'error': 'Usuario no encontrado.'}), 404
