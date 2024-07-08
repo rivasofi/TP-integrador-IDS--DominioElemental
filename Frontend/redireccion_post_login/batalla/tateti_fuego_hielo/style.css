@@ -102,3 +102,16 @@ body {
     box-sizing: border-box;
 }
 
+.notification {
+    background-color: rgb(77, 203, 238);
+    color: white;
+    padding: 15px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    border-radius: 5px;
+    display: none;
+    font-family: 'Open Sans', sans-serif;
+
+}

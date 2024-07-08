@@ -72,6 +72,7 @@ header {
     font-weight: 500;
     margin-left: 40px;
     margin-right: 10px;
+    animation: cambio_color 3s infinite;
 }
 
 body {
@@ -208,6 +209,32 @@ footer {
 .titulo_juego.juego_4 {
     animation: cambio_juego_hielo 2s infinite;
     text-align: center;
+}
+
+@keyframes cambio_color {
+    0% {
+        color: #fc910e;
+        text-shadow: 0 0 10px #fc910e;
+        transform: scale(1);
+    }
+
+    50% {
+        color: #ff7300;
+        text-shadow: 0 0 10px #ff7300;
+        transform: scale(1.2);
+    }
+
+    75% {
+        color: #ffba66;
+        text-shadow: 0 0 10px #ffba66;
+        transform: scale(1.1)
+    }
+
+    100% {
+        color: #fc910e;
+        text-shadow: 0 0 10px #fc910e;
+        transform: scale(1)
+    }
 }
 
 @keyframes cambio_juego_hielo {
