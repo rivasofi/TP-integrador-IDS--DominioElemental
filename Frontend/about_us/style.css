@@ -107,7 +107,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(../../Frontend/recursos_multimedia/login.png) no-repeat;
+    background: url(../recursos_multimedia/login.png) no-repeat;
     backdrop-filter: blur(10px);
     background-position: center;
     background-size: cover;
