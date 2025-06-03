@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: dominio-backend
+    env: python
+    buildCommand: cd backend && pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: SQLALCHEMY_DATABASE_URI
+        fromDatabase:
+          name: elemental-db
+          property: connectionString
+    buildFilter:
+      paths:
+        - backend/**
