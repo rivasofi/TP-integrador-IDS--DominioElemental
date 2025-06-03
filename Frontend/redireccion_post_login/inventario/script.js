@@ -1,3 +1,4 @@
+const BACKEND_URL = 'https://dominio-backend.onrender.com';
 document.addEventListener('DOMContentLoaded', function () {
     const cartas_por_pag = 14;
     const contenedor_controles = document.querySelector('.controles_invent');
@@ -5,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let total_paginas = 0;
     let cartas = [];
 
-    fetch('http://127.0.0.1:5000/cartas_usuario')
+    fetch('${BACKEND_URL}/cartas_usuario')
         .then(response => response.json())
     .then(data => {
         if (data.length === 0) {

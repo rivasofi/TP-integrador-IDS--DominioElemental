@@ -1,3 +1,4 @@
+const BACKEND_URL = 'https://dominio-backend.onrender.com';
 document.body.addEventListener('click', function () {
     reproducir_audio();
 });
@@ -26,7 +27,7 @@ function redireccionar(url) {
 }
 
 function obtener_saldo() {
-    fetch('http://127.0.0.1:5000/saldo')
+    fetch('${BACKEND_URL}/saldo')
         .then(response => response.json())
         .then(data => {
             const saldo_usuario = data.saldo;
@@ -98,7 +99,7 @@ function realizar_compra() {
         precio = 10;
     }
 
-    fetch('http://127.0.0.1:5000/comprar', {
+    fetch('${BACKEND_URL}/comprar', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

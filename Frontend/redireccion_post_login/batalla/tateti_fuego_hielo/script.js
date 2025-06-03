@@ -1,3 +1,4 @@
+const BACKEND_URL = 'https://dominio-backend.onrender.com';
 const game_board = document.querySelector("#gameboard");
 const info_display = document.querySelector("#info");
 const start_cells = ["", "", "", "", "", "", "", "", ""];
@@ -91,7 +92,7 @@ function disable_board() {
 }
 
 function sumar_saldo() {
-    fetch('http://127.0.0.1:5000/sumar_saldo', {
+    fetch('${BACKEND_URL}/sumar_saldo', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

@@ -1,9 +1,11 @@
+const BACKEND_URL = 'https://dominio-backend.onrender.com';
+
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
     var form_data = new FormData(this);
 
-    fetch('http://127.0.0.1:5000/submit', {
+    fetch('${BACKEND_URL}/submit', {
         method: 'POST',
         body: form_data
     })

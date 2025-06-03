@@ -1,3 +1,5 @@
+const BACKEND_URL = 'https://dominio-backend.onrender.com';
+
 //****** GAME LOOP ********//
 
 var time = new Date();
@@ -258,7 +260,7 @@ function mostrar_alert(message) {
 }
 
 function sumar_saldo() {
-    fetch('http://127.0.0.1:5000/sumar_saldo', {
+    fetch('${BACKEND_URL}/sumar_saldo', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
