@@ -5,7 +5,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 
     var form_data = new FormData(this);
 
-    fetch('${BACKEND_URL}/submit', {
+    fetch(`${BACKEND_URL}/submit`, {
         method: 'POST',
         body: form_data
     })

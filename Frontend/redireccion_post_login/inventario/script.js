@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let total_paginas = 0;
     let cartas = [];
 
-    fetch('${BACKEND_URL}/cartas_usuario')
+    fetch(`${BACKEND_URL}/cartas_usuario`)
         .then(response => response.json())
     .then(data => {
         if (data.length === 0) {
