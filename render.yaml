@@ -11,4 +11,4 @@ services:
           property: connectionString
     buildFilter:
       paths:
-        - backend/**
+        - Backend/**
